@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  belongs_to :animal
+  has_one :animal
   validates :location, presence: true
   after_initialize :set_default_found_status
 
