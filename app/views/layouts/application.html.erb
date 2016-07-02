@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Missingfursons</title>
+  <title>MissingFursons</title>
+  <div id="container">
+      <%=image_tag("website-banner.jpg", alt: "Missing Fursons Banner", :width => 1200, :height => 150, :crop => :fill, :align=> "middle", :class => "image-container")%>
+  </div>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,7 +21,8 @@
       <% end  %>
     </ul>
   </nav>
-<%= yield %>
-
+  <div class="wrapper">
+    <%= yield %>
+  </div>
 </body>
 </html>
