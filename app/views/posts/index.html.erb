@@ -18,13 +18,13 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.user.name %></td>
-        <td><%= post.animal.breed.species.name %></td>
+        <td><%= post.animal.name%></td>
         <td><%= post.location %></td>
         <td><%= post.phone %></td>
         <td><%= post.email %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'More details', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
