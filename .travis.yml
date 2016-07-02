@@ -6,6 +6,9 @@ deploy:
   provider: heroku
   api_key:
     secure: qu/58tqLA1TmWB6GY2nSu+NjnqzYk+EvKioZoCsOqa9mHRJe1cwxq89oMMZ2fMytjhSBLCiAwbfddlfjkzGPiglUXupEjFKZ+Z3/7VTyaqvnwV7d5HF33h4XFFOCbwIojzjh8TH2KiKie0w7O1LX6jnPC9+IqpkZj5sQFCDrHr9FmijMnytIOIJPW3X5Vf6ISgyJjV48mfAVSe4rrJ9618V4LKsyjGBUdm2ywSiMJjGLNvq5sm8fUe18gGryFhOqDD0J/nVZDsMKMpI7lV2ArkmLE1iWOe0u8VwkDjD4za6TtNIhDkJcOZlGb7osrfO7il75ybhuiefndOv5DtR9OziJwjVvuB3nSNP6kIRY4f9rlgqV1Sda2Q9+8cgKpY+bxI4gHYyZO0J9RYNxIXU3N1NSyms4nGTI8mGxstBatmBNSlkq/PeFd+1INEK1mLND4xFUcBgfYdsnShlbI5Rp3HxHf/dEYlz7MgnPz1CErdWKBDOLBLPeq8c0j5Ad9Jn9FYNcMM/ya5O6M3Efi3w8NsjpYzweD7bxuZHqfOE1Lfw2EBCh8CuLstHOle3Hhajlc2yJapO38zEHRsCyVtJ+IAX2dP7A6I9ZQiG7DWCJWh3C1yqntGVtXO5qcmUP/0Q5Azy/EXvBFXSB9TnbV/WNVcKn4Rn9nrUo6IkbZulEuYw=
+  run:
+    - "rake db:migrate"
+    - "rake db:seed"
   app: missingfursons
   on:
     repo: dnguyensr/missingfursons
