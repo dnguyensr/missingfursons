@@ -1,0 +1,48 @@
+<%= form_for(@post), html: { multipart: true } do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <!-- this is really weird because the image is currently
+ an attribute of animal, but the form is for post.  hmmmm.....
+  <div class="field">
+    f.label :user_id
+    f.file_field :image
+  </div> -->
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :animal_id %><br>
+    <%= f.number_field :animal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :found_status %><br>
+    <%= f.check_box :found_status %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
