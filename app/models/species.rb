@@ -1,3 +1,3 @@
 class Species < ActiveRecord::Base
-  belongs_to :breed
+  has_many :breeds
 end
