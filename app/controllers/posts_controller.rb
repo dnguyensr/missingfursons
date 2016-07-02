@@ -70,5 +70,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:user_id, :animal_id, :found_status, :location, :phone, :email)
+      # we need to permit :image also, but currently it is an attribute of animal not post
     end
 end
