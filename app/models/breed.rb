@@ -1,5 +1,5 @@
 class Breed < ActiveRecord::Base
+  has_many :animals
   belongs_to :species
-  belongs_to :animal
   validates :name, presence: true
 end
