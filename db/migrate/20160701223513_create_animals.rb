@@ -8,6 +8,7 @@ class CreateAnimals < ActiveRecord::Migration
       t.attachment :image
       t.integer :age
       t.integer :size
+      t.integer :user_id
 
       t.timestamps null: false
     end
