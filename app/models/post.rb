@@ -14,16 +14,25 @@ class Post < ActiveRecord::Base
 
   private
 
+  def get_post_information  
+    @species_name = self.animal.breed.species.name
+    @location = self.location
+    @animal_name = self.animal.name
+  end
+
   def post_to_facebook
-    facebook_graph.put_wall_post("Help! My dog is lost! \#MissingFursons", {
-      "name" => "Have you seen him?",
-      "link" => "http://missingfursons.com",
-      "picture" => "http://i.imgur.com/fjXJEz1.jpg"
+    get_post_information
+
+    facebook_graph.put_wall_post("Lost #{@species_name} #{@animal_name} in #{@location} \#MissingFursons", {
+      "name" => "Have you seen our #{@species_name} #{@animal_name}?",
+      "link" => "http://missingfursons.com", # Change this to show page link
+      "picture" => "http://i.imgur.com/l3qFZIu.jpg" # Change this to s3 link
     })
   end
 
   def post_to_twitter
-    twitter_client.update("Lost dog in ZIP, @missing_fursons")
+    get_post_information
+    twitter_client.update("Lost #{@species_name} #{@animal_name} in #{@location}, @missing_fursons")
   end
 
 end
