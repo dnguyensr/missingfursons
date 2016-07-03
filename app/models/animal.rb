@@ -1,6 +1,7 @@
 class Animal < ActiveRecord::Base
   has_one :post
   belongs_to :breed
+  # belongs_to :species
   belongs_to :user
   validates :name, :color, :size, presence: true
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100#" }
