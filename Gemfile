@@ -18,7 +18,11 @@ gem 'simple_form'
 # Include Koala as requirement for posting on facebook
 gem 'koala', '~> 2.2'
 # paperclip to handle image organization
-gem 'paperclip', '~> 5.0.0.beta1'
+gem 'paperclip'
+# aws-sdk to handle image storage
+gem 'aws-sdk', '~> 2.3'
+# foundation for styling
+gem 'foundation-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -60,4 +64,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

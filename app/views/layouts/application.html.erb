@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Missingfursons</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><%= link_to 'Home', posts_path %></li>
-      <% if user_signed_in? %>
-      <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-      <% elsif %>
-      <li><%= link_to 'Register', new_user_registration_path %></li>
-      <li><%= link_to 'Login', new_user_session_path %></li>
-      <% end  %>
-    </ul>
-  </nav>
-<%= yield %>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>MissingFursons</title>
+  </head>
+  <body>
+    <div id="container">
+      <%=image_tag("website-banner.jpg", alt: "Missing Fursons Banner", :width => 1200, :height => 150, :crop => :fill, :align=> "middle", :class => "image-container")%>
+    </div>
+    <nav>
+      <ul class="menu simple">
+        <li><%= link_to 'Home', posts_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+        <% elsif %>
+        <li><%= link_to 'Register', new_user_registration_path %></li>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end  %>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+  </body>
 </html>
