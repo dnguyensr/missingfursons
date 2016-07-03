@@ -1,5 +1,5 @@
 class Animal < ActiveRecord::Base
-  belongs_to :post
+  has_one :post
   belongs_to :breed
   belongs_to :user
   validates :name, :color, :size, presence: true
