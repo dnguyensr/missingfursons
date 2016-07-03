@@ -1,1 +1,26 @@
-<h1>Tell us about your animal</h1>
+<h1>Tell us about your pet</h1>
+
+<% if @animal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @animal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= simple_form_for @animal do |a| %>
+    <%= a.input :name %>
+    <%= a.input :breed, collection: @breeds, as: :select %>
+    <%= a.input :color %>
+    <%= a.input :age %>
+    <%= a.input :size %>
+    <%= a.input :additional_notes %>
+    <%= a.input :image %>
+
+
+    <%= a.button :submit %>
+<% end %>
