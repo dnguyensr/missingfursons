@@ -1,1 +1,12 @@
 <h1>Tell us about your animal</h1>
+
+<%= simple_form_for @animal do |a| %>
+    <%= a.input :name %>
+    <%= a.input :breed, collection: @breeds, as: :select %>
+    <%= a.input :color %>
+    <%= a.input :age %>
+    <%= a.input :size %>
+    <%= a.input :additional_notes %>
+  <% end %>
+
+<%= p.button :submit %>
