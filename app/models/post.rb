@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   include TwitterHelper
 
   belongs_to :user
-  has_one :animal
+  belongs_to :animal
   validates :location, presence: true
   after_initialize :set_default_found_status
   after_save :post_to_facebook, :post_to_twitter
