@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   private
 
-  def get_post_information  
+  def get_post_information
     @species_name = self.animal.breed.species.name
     @location = self.location
     @animal_name = self.animal.name
