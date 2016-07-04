@@ -1,4 +1,4 @@
-<h1>Tell us about your pet</h1>
+<h1>Tell us about your <%= @species.name %></h1>
 
 <% if @animal.errors.any? %>
     <div id="error_explanation">
@@ -15,6 +15,7 @@
 <%= simple_form_for @animal do |a| %>
     <%= a.input :name %>
     <% if @species.id == 1 %>
+      <p>If your dog's breed isn't on this list, pick the breed that most closely resembles your dog</p>
       <%= a.input :breed, collection: @breeds_dog, as: :select %>
     <% else %>
       <%= a.input :breed, collection: @breeds_cat, as: :select %>
@@ -22,9 +23,10 @@
     <%= a.input :color %>
     <%= a.input :age %>
     <%= a.input :size %>
-    <%= a.input :additional_notes %>
+    <p>Please include any additional information that may be helpful in finding your <%= @species.name %></p>
+    <%= a.input :additional_notes, label: false %>
     <%= a.input :image %>
 
 
-    <%= a.button :submit %>
+    <%= a.button :submit, "Save" %>
 <% end %>
