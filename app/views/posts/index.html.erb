@@ -8,6 +8,7 @@
   <table class="responsive">
     <thead>
       <tr>
+        <th>Pic</th>
         <th>Owner</th>
         <th>Lost</th>
         <th>Location</th>
@@ -20,13 +21,14 @@
     <tbody>
       <% @posts.each do |post| %>
         <tr>
+          <td><%= image_tag post.animal.image.url(:thumb) %></td>
           <td><%= post.user.name %></td>
           <td><%= post.animal.name%></td>
           <td><%= post.location %></td>
           <td><%= post.phone %></td>
           <td><%= post.email %></td>
           <td><%= link_to 'More details', post %></td>
-          <% if post.user == current_user %>
+          <% if post.user == current_user  || current_user.admin == true %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
           <% end %>
@@ -36,7 +38,7 @@
   </table>
 
 
-<%= link_to 'I lost my animal', '/animals/new' %>
+<%= link_to 'I lost my animal', '/home/homepage2' %>
 
 
   </div>
