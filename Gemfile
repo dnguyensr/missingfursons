@@ -17,6 +17,8 @@ gem 'faker'
 gem 'simple_form'
 # Include Koala as requirement for posting on facebook
 gem 'koala', '~> 2.2'
+# Include twitter to handle Twitter integration
+gem 'twitter'
 # paperclip to handle image organization
 gem 'paperclip'
 # aws-sdk to handle image storage
