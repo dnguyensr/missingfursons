@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :location
       t.string :phone
       t.string :email
+      t.date :date
 
       t.timestamps null: false
     end
