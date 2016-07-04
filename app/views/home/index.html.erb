@@ -1,0 +1,13 @@
+
+<div class="row columns">
+  <div class="large-6 large-centered columns">
+    <div class="large expanded button">
+      <% if user_signed_in? %>
+         <%= link_to 'Click here if you have lost your Pet!', posts_path %>
+      <% else %>
+          <%= link_to 'Click here if you have lost your Pet!', new_user_registration_path %>
+      <% end  %>
+    </div>
+
+  </div>
+</div>
