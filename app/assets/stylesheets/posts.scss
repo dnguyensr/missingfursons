@@ -135,3 +135,16 @@ iframe {
   display: block;
   background-color: $grey-100;
 }
+
+/* flyer */
+.print { display: none; }
+
+@media print {
+  .print { display: initial; }
+  .row, .p_hide { display: none; }
+
+  h1.lost {
+    font-size: 64pt;
+  }
+
+}

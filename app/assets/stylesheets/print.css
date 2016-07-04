@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Lato|Open+Sans|Varela+Round";
+/*@import "https://fonts.googleapis.com/css?family=Lato|Open+Sans|Varela+Round";
 * {
   font-family: 'Open Sans', sans-serif;
   color: #546e7a;
@@ -15,10 +15,10 @@ a {
 
 a:hover {
   color: #2e7d32;
-}
+}*/
 
 /* header */
-header {
+/*header {
   margin: 48px 0px;
 }
 header img {
@@ -30,11 +30,11 @@ header h1 {
   display: inline-block;
   font-family: 'Varela Round', sans-serif;
   font-size: 48pt;
-  margin: 0px;
+  margin: 0px;*/
 }
 
 /* content */
-main {
+/*main {
   text-align: center;
 }
 
@@ -93,4 +93,4 @@ iframe {
 
 .nav {
   display: none;
-}
+}*/

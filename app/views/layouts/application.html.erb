@@ -8,13 +8,12 @@
     <%= csrf_meta_tags %>
     <!-- Attach the Table CSS and Javascript for responsive tables-->
     <link rel="stylesheet" href="responsive-tables.css">
-    <link rel="stylesheet" type="text/css" media="print" href="../../../assets/stylesheets/print.css" />
     <script src="stylesheet" href="responsive-tables.js"></script>
     <title>MissingFursons</title>
   </head>
   <body>
     <!-- Large Banner -->
-    <div class="row">
+    <div class="row p_hide">
       <div class="large-12 columns">
         <a href="/"><header>
           <%=image_tag("ico.svg", alt: "Missing Fursons Banner", :class => "image-container")%>
@@ -26,7 +25,7 @@
     </div>
 
     <!-- Navigation  -->
-    <div class="row nav">
+    <div class="row nav p_hide">
         <!-- <ul class="menu simple"> -->
         <!-- change font color at line 52 of _settings.scss -->
           <div class="medium-12 columns">

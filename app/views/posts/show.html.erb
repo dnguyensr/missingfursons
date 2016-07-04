@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="p_hide"><%= notice %></p>
 
 
 <!-- <h1>
@@ -61,13 +61,17 @@
 
     </p>
 
-    <% if (user_signed_in?) %>
-      <p> If you would like to automatically create a flyer for this pet,</p>
-      <p> you can do so by clicking here.
-      <%= link_to 'Create Flyer', edit_post_path(@post) %><br><br></p>
-    <% end %>
+    <div class="p_hide">
+      <% if (user_signed_in?) %>
+        <p> Simply <i>print</i> this page to create a flyer </p>
+        <!-- <p> If you would like to automatically create a flyer for this pet, print this page </p> -->
+        <!-- <p> you can do so by clicking here -->
+      <% end %>
 
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </div>
+
+    <span class="print"> This flyer was created by Missing Fursons </span>
   </div>
 </main>
