@@ -1,32 +1,38 @@
-<h1>Tell us about your <%= @species.name %></h1>
+<div class="row">
+  <div class="small-6 columns">
 
-<% if @animal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <h1>Tell us about your <%= @species.name %></h1>
 
-      <ul>
-      <% @animal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-<% end %>
+    <% if @animal.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this post    from being saved:</h2>
 
-<%= simple_form_for @animal do |a| %>
-    <%= a.input :name %>
-    <% if @species.id == 1 %>
-      <p>If your dog's breed isn't on this list, pick the breed that most closely resembles your dog</p>
-      <%= a.input :breed, collection: @breeds_dog, as: :select %>
-    <% else %>
-      <%= a.input :breed, collection: @breeds_cat, as: :select %>
+          <ul>
+          <% @animal.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
     <% end %>
-    <%= a.input :color %>
-    <%= a.input :age %>
-    <%= a.input :size %>
-    <p>Please include any additional information that may be helpful in finding your <%= @species.name %></p>
-    <%= a.input :additional_notes, label: false %>
-    <%= a.input :image %>
+
+    <%= simple_form_for @animal do |a| %>
+        <%= a.input :name %>
+        <% if @species.id == 1 %>
+          <p>If your dog's breed isn't on this list, pick the breed that most     closely resembles your dog</p>
+          <%= a.input :breed, collection: @breeds_dog, as: :select %>
+        <% else %>
+          <%= a.input :breed, collection: @breeds_cat, as: :select %>
+        <% end %>
+        <%= a.input :color %>
+        <%= a.input :age %>
+        <%= a.input :size %>
+        <p>Please include any additional information that may be helpful in finding     your <%= @species.name %></p>
+        <%= a.input :additional_notes, label: false %>
+        <%= a.input :image %>
 
 
-    <%= a.button :submit, "Save" %>
-<% end %>
+        <%= a.button :submit, "Save" %>
+    <% end %>
+
+  </div>
+</div>
