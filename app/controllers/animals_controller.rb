@@ -14,9 +14,10 @@ class AnimalsController < ApplicationController
 
   # GET /animals/new
   def new
+    @species = Species.find(params[:data])
     @animal = Animal.new
-    @breeds_dog = Breed.find_by(species_id: 1)
-    @breeds_cat = Breed.find_by(species_id: 2)
+    @breeds_dog = Breed.find(:all, :conditions => {species_id: 1})
+    @breeds_cat = Breed.find(:all, :conditions => {species_id: 2})
   end
 
   # GET /animals/1/edit
