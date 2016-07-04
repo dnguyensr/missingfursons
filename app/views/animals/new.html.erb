@@ -14,7 +14,11 @@
 
 <%= simple_form_for @animal do |a| %>
     <%= a.input :name %>
-    <%= a.input :breed, collection: @breeds, as: :select %>
+    <% if @species.id == 1 %>
+      <%= a.input :breed, collection: @breeds_dog, as: :select %>
+    <% else %>
+      <%= a.input :breed, collection: @breeds_cat, as: :select %>
+    <% end %>
     <%= a.input :color %>
     <%= a.input :age %>
     <%= a.input :size %>
