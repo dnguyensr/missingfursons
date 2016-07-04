@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @posts = Post.all
-    render '/posts/homepage2'
+    @posts = Post.all
   end
 
   # GET /posts/1
