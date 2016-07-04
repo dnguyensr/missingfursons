@@ -14,12 +14,22 @@ class AnimalsController < ApplicationController
 
   # GET /animals/new
   def new
+    @species = Species.find_by(name: params[:species])
+
     @animal = Animal.new
-    @breeds = Breed.all
+    # @breeds_dog = Breed.find(:all, :conditions => {species_id: 1})
+    # @breeds_cat = Breed.find(:all, :conditions => {species_id: 2})
+    @breeds_dog = Breed.where(species_id: 1)
+    p "DOG BREEDS: #{@breeds_dog}"
+
+    @breeds_cat = Breed.where(species_id: 2)
   end
 
   # GET /animals/1/edit
   def edit
+    if @animal.user != current_user
+      redirect_to posts_path
+    end
   end
 
   # POST /animals
@@ -45,6 +55,9 @@ class AnimalsController < ApplicationController
   # PATCH/PUT /animals/1
   # PATCH/PUT /animals/1.json
   def update
+    if @animal.user != current_user
+      redirect_to posts_path
+    end
     respond_to do |format|
       if @animal.update(animal_params)
         format.html { redirect_to @animal, notice: 'Animal was successfully updated.' }
