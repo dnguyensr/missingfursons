@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="p_hide"><%= notice %></p>
 
 
-<h1>
+<!-- <h1>
   <strong>LOST <%= @post.animal.breed.species.name %> </strong>
-</h1>
+</h1> -->
 
-<div class="row">
-  <div class="large-12 columns">
+<main>
+  <div class="wrapper">
 
+    <h1 class="lost">
+      LOST <%= @post.animal.breed.species.name.upcase %>
+    </h1>
 
-    <h1>
-      <strong>LOST <%= @post.animal.breed.species.name %> </strong>
-    </h2>
+    <li>
+      <div class="image_cont">
+        <%= image_tag @post.animal.image.url(:medium) %>
+        <span><%= @post.animal.name %></span>
+      </div>
+      <div class="map_cont">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1o3dcgcCm7upx59T4I5ovflPLcQA9I-0
+            &q=<%= @post.location %>" allowfullscreen>
+          <!-- https://www.google.com/maps/embed/v1/place?key=AIzaSyD1o3dcgcCm7upx59T4I5ovflPLcQA9I-0
+            &q=<%= @post.location %> -->
+        </iframe>
+        <span>Last seen near <%= @post.location %></span>
+      </div>
+    </li>
 
-
-    <%= image_tag @post.animal.image.url(:medium) %>
-
-    <p>
-      <strong><%= @post.animal.name %></strong>
-    </p>
 
     <p>Our beloved <%= @post.animal.age %> year old <%= @post.animal.breed.name %> breed was lost on <%= @post.date.strftime('%m/%d/%Y') %>.</p>
 
@@ -45,13 +57,21 @@
       <%= @post.location %>
     </p>
 
-    <% if (user_signed_in?) %>
-      <p> If you would like to automatically create a flyer for this pet,</p>
-      <p> you can do so by clicking here.
-      <%= link_to 'Create Flyer', edit_post_path(@post) %><br><br></p>
-    <% end %>
+    <p>
 
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
+    </p>
+
+    <div class="p_hide">
+      <% if (user_signed_in?) %>
+        <p> Simply <i>print</i> this page to create a flyer </p>
+        <!-- <p> If you would like to automatically create a flyer for this pet, print this page </p> -->
+        <!-- <p> you can do so by clicking here -->
+      <% end %>
+
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </div>
+
+    <span class="print"> This flyer was created by Missing Fursons </span>
   </div>
-</div>
+</main>

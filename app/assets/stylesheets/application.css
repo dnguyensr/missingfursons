@@ -15,3 +15,167 @@
  *= require foundation_and_overrides
 
  */
+
+a {
+  color: black;
+}
+
+
+.hero{
+  width: 100%;
+  max-width: 1200px;
+  height: 375px;
+  text-align: center;
+  margin: 0 auto;
+  background: #392f28;
+  position: relative;
+  /*color: #392f28;*/
+  color: #D7CCC8;
+  letter-spacing: 5px;
+  font-weight: bold;
+  padding: 0px 0px 0px 0px;
+  font-size: 24px;
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+.hero h1{
+  font-size: 4.1em;
+  margin: auto;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero img{
+  opacity: .5;
+  /* Set rules to fill background */
+/*  min-height: 50%;
+  min-width: 1024px;
+*/  /* Set up proportionate scaling */
+/*  width: 100%;
+  height: 50%;
+*/  /* Set up positioning */
+/*  position: fixed;
+  top: 0;
+  left: 0;
+*/}
+
+/*#nav-text {
+  position: fixed;
+
+}*/
+/*.bar{
+  width: 100%;
+  height: 200px;
+  background: -moz-linear-gradient(289deg, #c60a09 0%, #f23332 36%, #c60a09 100%);
+  background: -webkit-linear-gradient(289deg, #c60a09 0%, #f23332 36%, #c60a09 100%);
+  background: -ms-linear-gradient(289deg, #c60a09 0%, #f23332 36%, #c60a09 100%);
+  background: linear-gradient(161deg, #c60a09 0%, #f23332 36%, #c60a09 100%);
+  opacity: 0.3;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 90px;
+  -ms-transform-origin: 100% 0%;
+  -webkit-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+   -webkit-animation: roll-out 1.2s ease-out ;
+  -moz-animation: roll-out 1.2s ease-out ;
+    animation: roll-out 1.2s ease-out ;
+}*/
+.hero h1, .hero p{
+  -webkit-animation: scale-in 1.3s ease-out;
+  -moz-animation: scale-in 1.3s  ease-out;
+    animation: scale-in 1.3s ease-out;
+}
+
+
+@media all and (max-width: 768px) {
+  .hero{
+    height: 35vw;
+  }
+  .bar{
+    height: 26vw;
+    top: 10vw;
+  }
+  .hero h1{
+    font-size: 8vw;
+    top: 13vw;
+  }
+  .hero p{
+    font-size: 3vw;
+    top: 27vw;
+  }
+
+}
+
+
+
+
+/*
+.hero {
+  background: url("new-banner.png") no-repeat center center;
+  background-size: cover;
+  height: 75vh;
+}
+  .hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .8;
+  }
+  .hero .intro {
+    padding: 3rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero h1 {
+    color: #D7CCC8;
+    */
+    /*color: #fff;*/
+  /*font-size: 1000px;*/
+
+
+ /* font-family: times, Times New Roman, times-roman, georgia, serif;
+
+    font-size: 15rem;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+    font-weight: 300;
+    text-align: center;
+  }
+  .hero p {
+    color: #fff;
+    line-height: 1.75em;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 2rem; }
+  .hero .tech-img {
+    background: url("new-banner.png") no-repeat center center;
+    background-size: cover;
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; }
+  @media only screen and (min-width: 40.063em) {
+    .hero .tech-img {
+      height: 18rem;
+      width: 18rem; }
+    .hero h1 {
+      padding-top: 4.5rem;
+      text-align: right;
+      font-size: 5rem;
+    }
+    .hero p {
+      text-align: right; } }
+
+      */

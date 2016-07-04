@@ -48,7 +48,6 @@ persy = Breed.create(name: 'Persian', species: cat)
 siamese = Breed.create(name: 'Siamese', species: cat)
 
 
-
 # newpost1 = Post.create(user: john, found_status: false, location: "92117", phone: "619-884-0246", email: john.email, date: Date.today )
 # newpost2 = Post.create(user: jane, found_status: false, location: "92101", phone: "619-884-0246", email: jane.email, date: Date.today )
 # teddy = Animal.create(post: newpost1, breed: golden, name: "Teddy", color: "Blonde", additional_notes: "loves frisbees and peanut butter", image: File.new("Teddy-2.jpeg"), age: 4, size: "medium" )
