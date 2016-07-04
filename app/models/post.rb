@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   include FacebookHelper
   include TwitterHelper
+  require 'open-uri'
 
   belongs_to :user
   belongs_to :animal
@@ -32,9 +33,10 @@ class Post < ActiveRecord::Base
 
   def post_to_twitter
     get_post_information
-    # twitter_client.upload("Teddy-1.JPG")
 
-    twitter_client.update_with_media("Lost #{@species_name} #{@animal_name} in #{@location}, @missing_fursons", self.animal.image.url)
+    post_link = "https://missingfursons.com/posts/#{self.id}"
+
+    twitter_client.update_with_media("Lost #{@species_name} #{@animal_name} in #{@location}, @missing_fursons - #{post_link}", open(self.animal.image.url))
   end
 
 end
