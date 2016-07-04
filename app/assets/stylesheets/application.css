@@ -16,6 +16,10 @@
 
  */
 
+a {
+  color: black;
+}
+
 
 .hero{
   width: 100%;
@@ -32,34 +36,37 @@
   padding: 0px 0px 0px 0px;
   font-size: 24px;
   font-family: times, Times New Roman, times-roman, georgia, serif;
-
 }
 
 .hero h1{
   font-size: 4.1em;
   margin: auto;
-  position: absolute;
+  position: fixed;
   top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
 }
-/*.hero p{
-  font-size: 1.5em;
-  margin: auto;
-  position: absolute;
-  top: 220px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}*/
-.hero img{
-  width: 100%;
-    opacity: .5;
 
-}
+.hero img{
+  opacity: .5;
+  /* Set rules to fill background */
+/*  min-height: 50%;
+  min-width: 1024px;
+*/  /* Set up proportionate scaling */
+/*  width: 100%;
+  height: 50%;
+*/  /* Set up positioning */
+/*  position: fixed;
+  top: 0;
+  left: 0;
+*/}
+
+/*#nav-text {
+  position: fixed;
+
+}*/
 /*.bar{
   width: 100%;
   height: 200px;
