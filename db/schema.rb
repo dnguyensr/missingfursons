@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160703045518) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,9 +28,9 @@ ActiveRecord::Schema.define(version: 20160703045518) do
     t.datetime "image_updated_at"
     t.integer  "age"
     t.integer  "size"
+    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "post_id"
   end
 
   create_table "breeds", force: :cascade do |t|
@@ -41,13 +42,14 @@ ActiveRecord::Schema.define(version: 20160703045518) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "animal_id"
     t.boolean  "found_status"
     t.string   "location"
     t.string   "phone"
     t.string   "email"
+    t.date     "date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.date     "date",         null: false
   end
 
   create_table "species", force: :cascade do |t|
