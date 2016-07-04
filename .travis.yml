@@ -9,6 +9,7 @@ deploy:
   run:
     - "rake db:migrate"
     - "rake db:seed"
+    - "rake -t"
   app: missingfursons
   on:
     repo: dnguyensr/missingfursons
