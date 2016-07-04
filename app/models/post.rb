@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :animal
   validates :location, presence: true
   after_initialize :set_default_found_status
-  # after_save :post_to_facebook, :post_to_twitter
+  after_save :post_to_facebook, :post_to_twitter
 
   def set_default_found_status
     self.found_status = false
