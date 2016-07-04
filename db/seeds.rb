@@ -44,8 +44,8 @@ siamese = Breed.create(name: 'Siamese', species: cat)
 
 
 
-newpost1 = Post.create(user: john, found_status: false, location: "92117", phone: "619-884-0246", email: john.email, date: Date.today )
-newpost2 = Post.create(user: jane, found_status: false, location: "92101", phone: "619-884-0246", email: jane.email, date: Date.today )
+# newpost1 = Post.create(user: john, found_status: false, location: "92117", phone: "619-884-0246", email: john.email, date: Date.today )
+# newpost2 = Post.create(user: jane, found_status: false, location: "92101", phone: "619-884-0246", email: jane.email, date: Date.today )
+# teddy = Animal.create(post: newpost1, breed: golden, name: "Teddy", color: "Blonde", additional_notes: "loves frisbees and peanut butter", image: File.new("Teddy-2.jpeg"), age: 4, size: "medium" )
+# fluffy = Animal.create(post: newpost2, breed: mix, name: "Fluffy", color: "Calico", additional_notes: "loves chasing dogs", image: File.new("Feles.jpg"), age: 2, size: "small" )
 
-teddy = Animal.create(post: newpost1, breed: golden, name: "Teddy", color: "Blonde", additional_notes: "loves frisbees and peanut butter", image: File.new("./db/Teddy-2.jpeg"), age: 4, size: "medium" )
-fluffy = Animal.create(post: newpost2, breed: mix, name: "Fluffy", color: "Calico", additional_notes: "loves chasing dogs", image: File.new("./db/Feles.jpg"), age: 2, size: "small" )
