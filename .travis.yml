@@ -2,10 +2,13 @@ language: ruby
 rvm:
   - 2.2.4
 
+services:
+  - postgresql
+
 test:
   adapter: postgresql
   database: travis_ci_test
-  
+
 deploy:
   provider: heroku
   api_key:
