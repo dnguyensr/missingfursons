@@ -34,13 +34,13 @@
 
 
     <p>If found please contact <b><%= @post.user.name %></b> at: </p>
-    <% if @post.phone != nil %>
+    <% if !@post.phone.empty? %>
     <p>
       <strong>Phone:</strong>
       <%= @post.phone %>
     </p>
     <% end %>
-    <% if @post.email != nil %>
+    <% if !@post.email.empty? %>
     <p>
       <strong>Email:</strong>
       <%= @post.email %>
