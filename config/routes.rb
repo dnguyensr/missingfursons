@@ -8,6 +8,9 @@ Rails.application.routes.draw do
         sessions: 'users/sessions'
       }
 
+
+  get 'home2' => 'home#index'
+  get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
 
   # The priority is based upon order of creation: first created -> highest priority.
