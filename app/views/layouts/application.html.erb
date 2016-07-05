@@ -13,50 +13,40 @@
     <title>MissingFursons</title>
   </head>
   <body>
-    <!-- Large Banner -->
-    <div class="row p_hide">
-      <!-- <div class="large-12 columns">
-        <a href="/"><header>
-          <%=image_tag("ico.svg", alt: "Missing Fursons Banner", :class => "image-container")%>
-          <h1>Missing Fursons</h1>
-        </header></a>
-      <%=image_tag("website-banner.jpg", alt: "Missing Fursons Banner", :width => 1200, :height => 150, :crop => :fill, :align=> "middle", :class => "image-container")%>
 
-      </div> -->
+    <a href="/">
+    <header>
+      <div class="top-layer">
+        <%=image_tag("ico-wo.svg", alt: "Missing Fursons Banner", :class => "image-container")%>
+        <h1>Missing Fursons</h1>
+      </div>
+      <div class="mid-layer"></div>
+      <div class="bottom-layer">
+      </div>
+    </header>
+    </a>
 
+    <nav>
+      <div class="left">
+        <span><%= link_to 'Home', root_path %></span>
+        <span><%= link_to 'Active Alerts', posts_path %></span>
+        <span><%= link_to 'Found a Pet?', resource_found_path %></span>
+      </div>
+      <div class="right">
+        <% if user_signed_in? %>
+        <span><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></span>
+        <% elsif %>
+        <span><%= link_to 'Register', new_user_registration_path %></span>
+        <span><%= link_to 'Login', new_user_session_path %></span>
+        <% end %>
+      </div>
+    </nav>
 
+    <main>
+      <div class="wrapper">
+        <%= yield %>
+      </div>
+    </main>
 
-<section class="hero">
-    <div class="sticky contain-to-grid" >
-
-      <h1>Missing Fursons</h1>
-      <%=image_tag("new-banner.png", alt: "Missing Fursons Banner", :align=> "middle", :class => "image-container")%>
-    </div>
-  </div>
-</section>
-
-
-
-
-    <!-- Navigation  -->
-    <div class="row nav p_hide">
-        <!-- <ul class="menu simple"> -->
-        <!-- change font color at line 52 of _settings.scss -->
-          <div class="large-12 columns">
-            <ul class="breadcrumbs">
-              <li><%= link_to 'Home', posts_path %></li>
-              <% if user_signed_in? %>
-                <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-              <% elsif %>
-                <li><%= link_to 'Register', new_user_registration_path %></li>
-                <li><%= link_to 'Login', new_user_session_path %></li>
-              <% end  %>
-            </ul>
-          </div>
-    </div>
-
-    <div class="wrapper">
-      <%= yield %>
-    </div>
   </body>
 </html>
