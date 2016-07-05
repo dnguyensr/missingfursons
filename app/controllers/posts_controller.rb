@@ -78,6 +78,23 @@ class PostsController < ApplicationController
     render '/posts/resourcefound'
   end
 
+  def found_form
+    render '/posts/foundform'
+  end
+
+  def found_submit
+    @breed = params[:breed]
+    breed = Breed.find_by(name: @breed)
+    @species = breed.species
+    @color = params[:color]
+    @location = params[:location]
+    @shelter_name = params[:shelter_name]
+    @date = params[:date]
+    @additional_notes = params[:additional_notes]
+    @image_url = params[:image]
+    render '/posts/showfound'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

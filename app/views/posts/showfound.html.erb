@@ -1,0 +1,47 @@
+<p id="notice" class="p_hide"><%= notice %></p>
+
+
+<main>
+  <div class="wrapper">
+
+    <h1 class="lost">
+      FOUND <%= @species %>
+    </h1>
+
+    <li>
+      <div class="image_cont">
+        <img src="#{@image_url}">
+      </div>
+      <div class="map_cont">
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1o3dcgcCm7upx59T4I5ovflPLcQA9I-0&q=<%= @location %>" allowfullscreen>
+        </iframe>
+        <span>Dropped off at <%= @shelter_name %></span>
+      </div>
+    </li>
+
+
+    <p>A <%= @breed.name %> breed was found on <%= @date.strftime('%m/%d/%Y') %>.</p>
+
+    <p>
+      <strong>Additional information:</strong>
+      <%= @additional_notes %>
+    </p>
+
+    <p>
+
+    </p>
+
+    <div class="p_hide">
+        <p> Simply <i>print</i> this page to create a flyer </p>
+
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </div>
+
+    <span class="print"> This flyer was created by Missing Fursons </span>
+  </div>
+</main>

@@ -4,8 +4,8 @@
 <body>
   Once you've dropped the pet off at a shelter, let us help you create flyers for them:
 
-  <form action="" method="get"> <!-- what is the action?? -->
-    <label>Your Best Guess Regarding Species</label>
+  <form action="/posts/found_submit" method="post">
+    <label>Breed (If you don't know, give us your best guess)</label>
     <select id="breed">
       <optgroup label="Cats">
         <option value="domestic_long_haired">Domestic Long-Haired</option>
@@ -39,12 +39,14 @@
         <option value="shih_tzu">Shih Tzu</option>
         <option value="siberian_husky">Siberian Husky</option>
         <option value="yorkshire_terrier">Yorkshire Terrier</option>
-        <option value="other">Other</option>
       </optgroup>
     </select>
 
     <label for="color">Color</label>
     <input id="color" type="text">
+
+    <label for="shelter_name">Shelter name</label>
+    <input id="shelter_name" type="text">
 
     <label for="location">Shelter address</label>
     <input id="location" type="text">
@@ -55,8 +57,8 @@
     <label for="additional_notes">Please include any additional information that may be helpful in finding the pet's home</label>
     <input id="additional_notes" type="textbox">
 
-    <label for="image">Upload an image to an image hosting website (like google+ photos, flickr, imgur, etc) and paste the url here:</label>
-    <input id="image" type="text">
+    <label for="image_url">Upload an image to an image hosting website (like google+ photos, flickr, imgur, etc) and paste the url here:</label>
+    <input id="image_url" type="text">
 
     <input type="submit">
 
