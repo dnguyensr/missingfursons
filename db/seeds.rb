@@ -7,11 +7,13 @@ Post.delete_all
 
 john = User.create(name: 'John', email: 'a@a.com', password: 'password')
 jane = User.create(name: 'Jane', email: 'b@b.com', password: 'password')
-daniel = User.create(name: 'Daniel', email: 'daniel@dbc.com', password: 'password')
-martha = User.create(name: 'Martha', email: 'martha@dbc.com', password: 'password')
-taylor = User.create(name: 'Taylor Twoteeth', email: 'taylor@dbc.com', password: 'password')
-david = User.create(name: 'David', email: 'david@dbc.com', password: 'password')
-noah = User.create(name: 'Noah', email: 'noah@dbc.com', password: 'password')
+user = User.create(name: 'user', email: 'user@dbc.com', password: 'password')
+admin = User.create(name: 'admin', email: 'admin@dbc.com', password: 'password', admin: true)
+daniel = User.create(name: 'Daniel', email: 'daniel@dbc.com', password: 'password', admin: true)
+martha = User.create(name: 'Martha', email: 'martha@dbc.com', password: 'password', admin: true)
+taylor = User.create(name: 'Taylor Twoteeth', email: 'taylor@dbc.com', password: 'password', admin: true)
+david = User.create(name: 'David', email: 'david@dbc.com', password: 'password', admin: true)
+noah = User.create(name: 'Noah', email: 'noah@dbc.com', password: 'password', admin: true)
 
 dog = Species.create(name: 'Dog')
 cat = Species.create(name: 'Cat')
