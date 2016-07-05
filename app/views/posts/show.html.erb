@@ -36,16 +36,18 @@
 
 
     <p>If found please contact <b><%= @post.user.name %></b> at: </p>
+    <% if @post.phone != nil %>
     <p>
       <strong>Phone:</strong>
       <%= @post.phone %>
     </p>
-
+    <% end %>
+    <% if @post.email != nil %>
     <p>
       <strong>Email:</strong>
       <%= @post.email %>
     </p>
-
+    <% end %>
     <p>
       <strong>Additional information:</strong>
       <%= @post.animal.additional_notes %>
