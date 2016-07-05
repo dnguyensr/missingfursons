@@ -26,8 +26,8 @@ class Post < ActiveRecord::Base
 
     facebook_graph.put_wall_post("Lost #{@species_name} #{@animal_name} in #{@location} \#MissingFursons", {
       "name" => "Have you seen our #{@species_name} #{@animal_name}?",
-      "link" => "http://missingfursons.com", # Change this to show page link
-      "picture" => "http://i.imgur.com/l3qFZIu.jpg" # Change this to s3 link
+      "link" => "http://missingfursons.com/posts/#{self.id}", # Change this to show page link
+      "picture" => self.animal.image.url # Change this to s3 link
     })
   end
 
