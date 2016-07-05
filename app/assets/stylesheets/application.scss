@@ -1,4 +1,8 @@
 /* A_P_P_L_I_C_A_T_I_O_N_ S_C_S_S_ :Dr */
+/*
+ *= require_tree .
+ *= require_self
+ */
 
 /* normalization */
 html, body {
@@ -63,6 +67,7 @@ header {
       display: inline-block;
       color: white;
       font: {
+        weight: normal;
         family: 'Varela Round', sans-serif;
         size: 48pt;
       }
@@ -125,6 +130,8 @@ nav {
   .left {
     width: 60%;
     float: left;
+
+    text-align: left;
   }
   .right {
     width: 40%;
@@ -142,6 +149,26 @@ nav {
   }
 }
 
+/* language styles */
+
+h1, h2, h3, h4 {
+  color: $brown;
+  cursor: default;
+}
+
+h1 {
+  font: {
+    size: 48px;
+    family: 'Open Sans', sans-serif;
+    weight: bold;
+  }
+}
+
+// buttons
+@import 'button';
+.button {
+
+}
 
 
 
