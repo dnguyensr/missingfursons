@@ -66,6 +66,7 @@
         <!-- <p> you can do so by clicking here -->
       <% end %>
 
+      <%= link_to "Additional Tips For Finding #{@post.animal.name}", "http://www.humanesociety.org/animals/resources/tips/what_to_do_lost_pets.html?referrer=https://www.google.com/" %> |
       <%= link_to 'Edit', edit_post_path(@post) %> |
       <%= link_to 'Back', posts_path %>
     </div>
