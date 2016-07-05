@@ -10,11 +10,11 @@
       </ul>
     </div>
   <% end %>
-    <p>Please include email and/or phone</p>
+    <div>Please include your preferred method of contact: email and/or phone</div>
     <%= p.input :location %>
     <%= p.input :phone %>
     <%= p.input :email %>
-    <%= p.input :date %>
+    <%= p.input :date, html5: true %>
 
 
     <%= p.button :submit %>
