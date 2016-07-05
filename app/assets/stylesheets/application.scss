@@ -1,0 +1,153 @@
+/* A_P_P_L_I_C_A_T_I_O_N_ S_C_S_S_ :Dr */
+
+/* normalization */
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* colors */
+$brown: #7D3F29;
+
+/* fonts */
+@import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans:400,700|Varela+Round';
+
+/* application styles  */
+
+
+div {
+  display: inline-block;
+}
+
+a {
+  color: inherit; font-family: inherit;
+  text-decoration: none;
+}
+
+// elevation:
+// nav    30
+// header 20
+// main   10
+
+
+// header
+body a {
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 192px;
+
+  z-index: 20;
+}
+
+header {
+  div {
+    position: absolute;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+  }
+
+  .top-layer {
+    padding: 48px 0px;
+    box-sizing: border-box;
+    text-align: center;
+
+    img {
+      height: 64px;
+      vertical-align: top;
+      margin: 12px;
+    }
+    h1 {
+      display: inline-block;
+      color: white;
+      font: {
+        family: 'Varela Round', sans-serif;
+        size: 48pt;
+      }
+      margin: 0px;
+      margin-top: 12px;
+    }
+
+    z-index: 23;
+  }
+
+  .mid-layer {
+    background-color: $brown;
+    opacity: 0.75;
+    z-index: 22;
+  }
+
+  .bottom-layer {
+    background-image: url(new-new-banner.png);
+    background-size: 768px;
+    background-position: 0px;
+
+                animation: scrollbackground 90s linear 0s infinite;
+           -moz-animation: scrollbackground 90s linear 0s infinite;
+        -webkit-animation: scrollbackground 90s linear 0s infinite;
+             -o-animation: scrollbackground 90s linear 0s infinite;
+
+    z-index: 21;
+  }
+
+}
+// animations
+
+@keyframes scrollbackground {
+    0% { background-position: 0px; }
+    100% { background-position: -768px; }
+}
+
+@-moz-keyframes scrollbackground {
+    0% { background-position: 0px; }
+    100% { background-position: -768px; }
+}
+
+@-webkit-keyframes scrollbackground {
+    0% { background-position: 0px; }
+    100% { background-position: -768px; }
+}
+
+@-o-keyframes scrollbackground {
+    0% { background-position: 0px; }
+    100% { background-position: -768px; }
+}
+
+
+// nav
+
+nav {
+  width: 100%;
+  height: 48px;
+
+  .left {
+    width: 60%;
+    float: left;
+  }
+  .right {
+    width: 40%;
+    float: left;
+
+    text-align: right;
+  }
+  span > a {
+    display: inline-block;
+    padding: 13px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    color: $brown;
+  }
+}
+
+
+
+
+
+
+
+
+
+* { }
