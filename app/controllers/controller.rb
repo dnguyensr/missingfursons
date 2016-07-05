@@ -1,7 +1,7 @@
 class Controller < ApplicationController
 
   def index
-    render '/homepage2.html.erb'
+    render '/homepage2'
   end
 
 

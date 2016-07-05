@@ -1,11 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
   def index
-    # @posts = Post.all
-    render '/posts/homepage2'
+    @posts = Post.all
   end
 
   # GET /posts/1
@@ -21,7 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-    if @post.user != current_user
+    if @post.user != current_user && current_user.admin == false
       redirect_to posts_path
     end
   end
@@ -48,7 +45,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    if @post.user == current_user
+    if @post.user == current_user || current_user.admin == true
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -66,7 +63,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    if @post.user != current_user
+    if @post.user = current_user || current_user.admin == true
       @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
@@ -75,6 +72,10 @@ class PostsController < ApplicationController
     else
       redirect_to posts_path
     end
+  end
+
+  def resource_found
+    render '/posts/resourcefound'
   end
 
   private

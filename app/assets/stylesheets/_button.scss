@@ -1,0 +1,73 @@
+
+$brown: #7D3F29;
+
+$yellow: #FFA000;
+$yellow-dark: #F57F17;
+
+html *,
+html *:before,
+html *:after {
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+html i, html em,
+html b, html strong,
+html span {
+  -webkit-transition: none;
+  transition: none;
+}
+
+*:before,
+*:after {
+  z-index: -1;
+}
+
+.centerer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wrap {
+  width: 50%;
+  float: left;
+}
+
+[class^="btn-"] {
+  position: relative;
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 24px;
+  overflow: hidden;
+  border: 0px solid currentColor;
+}
+
+.btn-1 {
+  color: $brown;
+  background-color: rgba(255, 160, 0, 0.8);
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 20px;
+}
+.btn-1:after {
+  content: '';
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(360deg);
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: rgb(255, 80, 0) transparent transparent transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.btn-1:hover {
+  color: $brown;
+}
+.btn-1:hover:after {
+  border-width: 330px 330px 0 0;
+}
+.btn-1:active {
+  background: $yellow-dark;
+}

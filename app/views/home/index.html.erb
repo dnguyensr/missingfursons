@@ -1,13 +1,12 @@
 
-<div class="row columns">
-  <div class="large-6 large-centered columns">
-    <div class="large expanded button">
-      <% if user_signed_in? %>
-         <%= link_to 'Click here if you have lost your Pet!', posts_path %>
-      <% else %>
-          <%= link_to 'Click here if you have lost your Pet!', new_user_registration_path %>
-      <% end  %>
-    </div>
-
-  </div>
-</div>
+<h1>Lose your pet?</h1>
+<% if user_signed_in? %>
+  <%= link_to 'Create a Meow Alert', "/animals/new?species=Cat" %>
+  <%= link_to 'Create a Woof Alert', "/animals/new?species=Dog" %>
+<% else %>
+  <%= link_to 'signup', new_user_registration_path, class: "btn-1" %>
+  <%= link_to 'login', new_user_session_path, class: "btn-1" %>
+  <%= link_to 'View active alerts', posts_path, class: "btn-1" %>
+<% end  %>
+<!-- <a href="#" class="btn-1">login</a>
+<a href="#" class="btn-1">signup</a> -->
