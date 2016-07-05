@@ -74,6 +74,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def resource_found
+    render '/posts/resourcefound'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
