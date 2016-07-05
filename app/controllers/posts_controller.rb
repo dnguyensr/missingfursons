@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:found_submit]
 
   def index
     @posts = Post.all
@@ -83,15 +84,19 @@ class PostsController < ApplicationController
   end
 
   def found_submit
-    @breed = params[:breed]
-    breed = Breed.find_by(name: @breed)
-    @species = breed.species
+    puts "======================PARAMS ARE:===================="
+    puts params
+    @breed = Breed.find_by(name: params[:breed])
+    puts "======================BREED IS ========================"
+    puts params[:breed]
+    p @breed
+    @species = @breed.species
     @color = params[:color]
     @location = params[:location]
     @shelter_name = params[:shelter_name]
     @date = params[:date]
     @additional_notes = params[:additional_notes]
-    @image_url = params[:image]
+    @image_url = params[:image_url]
     render '/posts/showfound'
   end
 

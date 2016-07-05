@@ -4,61 +4,62 @@
 <body>
   Once you've dropped the pet off at a shelter, let us help you create flyers for them:
 
-  <form action="/posts/found_submit" method="post">
-    <label>Breed (If you don't know, give us your best guess)</label>
-    <select id="breed">
+  <form action=<%= found_submit_path %> method="get">
+
+    <label for="breed">Breed (If you don't know, give us your best guess)</label>
+    <select name="breed" id="breed">
       <optgroup label="Cats">
-        <option value="domestic_long_haired">Domestic Long-Haired</option>
-        <option value="domestic_short_haired">Domestic Short-Haired</option>
-        <option value="himalayan">Himalayan</option>
-        <option value="persy">Persian</option>
-        <option value="siamese">Siamese</option>
+        <option value="Domestic Long-Haired">Domestic Long-Haired</option>
+        <option value="Domestic Short-Haired">Domestic Short-Haired</option>
+        <option value="Himalayan">Himalayan</option>
+        <option value="Persian">Persian</option>
+        <option value="Siamese">Siamese</option>
       </optgroup>
       <optgroup label="Dogs">
-        <option value="australian_shepherd">Australian Shepherd</option>
-        <option value="beagle">Beagle</option>
-        <option value="boston_terrier">Boston Terrier</option>
-        <option value="boxer">Boxer</option>
-        <option value="bulldog">Bulldog</option>
-        <option value="charles_spaniel">Cavalier King Charles Spaniel</option>
-        <option value="dachshund">Dachshund</option>
-        <option value="doberman_pinscher">Doberman Pinscher</option>
-        <option value="french_bulldog">French Bulldog</option>
-        <option value="german_shepherd">German Shepherd</option>
-        <option value="golden">Golden Retriever</option>
-        <option value="havanse">Havanse</option>
-        <option value="lab">Labrador Retriever</option>
-        <option value="mastiff">Mastiff</option>
-        <option value="mini_schnauzer">Miniature Schnauzer</option>
-        <option value="pembroke_welsh">Pembroke Welsh Corgi</option>
-        <option value="pointer">Pointer</option>
-        <option value="pomeranian">Pomeranian</option>
-        <option value="poodle">Poodle</option>
-        <option value="rottweiler">Rottweiler</option>
-        <option value="shetland_sheepdog">Shetland Sheepdog</option>
-        <option value="shih_tzu">Shih Tzu</option>
-        <option value="siberian_husky">Siberian Husky</option>
-        <option value="yorkshire_terrier">Yorkshire Terrier</option>
+        <option value="Australian Shepherd">Australian Shepherd</option>
+        <option value="Beagle">Beagle</option>
+        <option value="Boston Terrier">Boston Terrier</option>
+        <option value="Boxer">Boxer</option>
+        <option value="Bulldog">Bulldog</option>
+        <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel</option>
+        <option value="Dachshund">Dachshund</option>
+        <option value="Doberman Pinscher">Doberman Pinscher</option>
+        <option value="French Bulldog">French Bulldog</option>
+        <option value="German Shepherd">German Shepherd</option>
+        <option value="Golden Retriever">Golden Retriever</option>
+        <option value="Havanse">Havanse</option>
+        <option value="Labrador Retriever">Labrador Retriever</option>
+        <option value="Mastiff">Mastiff</option>
+        <option value="Miniature Schnauzer">Miniature Schnauzer</option>
+        <option value="Pembroke Welsh Corgi">Pembroke Welsh Corgi</option>
+        <option value="Pointer">Pointer</option>
+        <option value="Pomeranian">Pomeranian</option>
+        <option value="Poodle">Poodle</option>
+        <option value="Rottweiler">Rottweiler</option>
+        <option value="Shetland Sheepdog">Shetland Sheepdog</option>
+        <option value="Shih Tzu">Shih Tzu</option>
+        <option value="Siberian Husky">Siberian Husky</option>
+        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
       </optgroup>
     </select>
 
     <label for="color">Color</label>
-    <input id="color" type="text">
+    <input id="color" name="color" type="text">
 
     <label for="shelter_name">Shelter name</label>
-    <input id="shelter_name" type="text">
+    <input name="shelter_name" id="shelter_name" type="text">
 
     <label for="location">Shelter address</label>
-    <input id="location" type="text">
+    <input name="location" id="location" type="text">
 
     <label for="date">Date found</label>
-    <input id="date" type="date">
+    <input name="date" id="date" type="date">
 
     <label for="additional_notes">Please include any additional information that may be helpful in finding the pet's home</label>
-    <input id="additional_notes" type="textbox">
+    <input name="additional_notes" id="additional_notes" type="textbox">
 
     <label for="image_url">Upload an image to an image hosting website (like google+ photos, flickr, imgur, etc) and paste the url here:</label>
-    <input id="image_url" type="text">
+    <input name="image_url" id="image_url" type="text">
 
     <input type="submit">
 
