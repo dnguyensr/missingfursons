@@ -24,7 +24,7 @@ gem 'paperclip'
 # aws-sdk to handle image storage
 gem 'aws-sdk', '~> 2.3'
 # foundation for styling
-gem 'foundation-rails'
+# gem 'foundation-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
