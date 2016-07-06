@@ -23,6 +23,8 @@ gem 'twitter'
 gem 'paperclip'
 # aws-sdk to handle image storage
 gem 'aws-sdk', '~> 2.3'
+# rqrcode to generate qrcode
+gem 'rqrcode'
 # foundation for styling
 # gem 'foundation-rails'
 # Use SCSS for stylesheets
