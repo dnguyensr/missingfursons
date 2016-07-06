@@ -283,11 +283,8 @@ DEPENDENCIES
   devise (= 3.5.10)
   dotenv-rails
   faker
-<<<<<<< HEAD
   foundation-rails
   geokit-rails
-=======
->>>>>>> 31544ec42a391a7f8ba8cb3adbb6756e1ae2e159
   jbuilder (~> 2.0)
   jquery-rails
   koala (~> 2.2)
