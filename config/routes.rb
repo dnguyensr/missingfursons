@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
 
+  # JSON 
+  get 'posts_json' => 'posts#index_json'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
