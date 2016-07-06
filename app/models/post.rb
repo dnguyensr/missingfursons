@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
   after_initialize :set_default_found_status
   after_save :post_to_facebook, :post_to_twitter
 
+  acts_as_mappable
+
   def set_default_found_status
     self.found_status = false
   end
