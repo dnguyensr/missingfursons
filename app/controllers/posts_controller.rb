@@ -31,6 +31,8 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.animal = current_user.animals.last
     @post.found_status = false
+    @post.lat = Post.geocode(@post.location).lat
+    @post.lng = Post.geocode(@post.location).lng
 
     respond_to do |format|
       if @post.save
