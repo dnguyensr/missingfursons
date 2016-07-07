@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
   # GET /animals
   # GET /animals.json
   # def index
-  #   @animals = Post.all
+  #   @animals = Animal.all
   # end
   def add
     @animal = Animal.new
@@ -24,7 +24,6 @@ class AnimalsController < ApplicationController
     @animal.breed_id = params["animal"]["breed"].to_i
     @animal.user = current_user
     # @animal.breed = Breed.find_by(name: 'Golden Retriever')
-
     respond_to do |format|
       if @animal.save
         format.html { redirect_to "/users/#{current_user.id}", notice: 'Pet was successfully Addded.' }
@@ -35,6 +34,14 @@ class AnimalsController < ApplicationController
       end
     end
   end
+
+  def index_json
+    arr = []
+
+    Animal.all.each { |animal| arr.push({name: animal.name, age: animal.age, imageURL: animal.image.url, phone: animal.post.phone}) }
+    render json: arr
+  end
+
   # GET /animals/1
   # GET /animals/1.json
   def show
