@@ -6,7 +6,35 @@ class AnimalsController < ApplicationController
   # def index
   #   @animals = Post.all
   # end
+  def add
+    @animal = Animal.new
+    @species = Species.all
+    @breeds = Breed.all
+    # render :'animals/add'
+  end
+  def new2
+    @species = Species.find_by(name: params[:species])
+    @animal = Animal.new
+    @breeds_dog = Breed.where(species_id: 1)
+    @breeds_cat = Breed.where(species_id: 2)
+  end
 
+  def create2
+    @animal = Animal.new(post_params)
+    @animal.breed_id = params["animal"]["breed"].to_i
+    @animal.user = current_user
+    # @animal.breed = Breed.find_by(name: 'Golden Retriever')
+
+    respond_to do |format|
+      if @animal.save
+        format.html { redirect_to "/users/#{current_user.id}", notice: 'Pet was successfully Addded.' }
+        format.json { redirect_to "/users/#{current_user.id}", status: :created, location: @animal }
+      else
+        format.html { render :new }
+        format.json { render json: @animal.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   # GET /animals/1
   # GET /animals/1.json
   def show
@@ -27,7 +55,7 @@ class AnimalsController < ApplicationController
 
   # GET /animals/1/edit
   def edit
-    if @animal.user != current_user && current_user.admin == false
+    if current_user && @animal.user != current_user && current_user.admin == false
       redirect_to posts_path
     end
   end
