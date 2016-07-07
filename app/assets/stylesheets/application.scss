@@ -167,8 +167,17 @@ main {
   font-family: 'Roboto'
 }
 
-main .wrapper {
+main > .wrapper {
+    display: inline-block;
+    width: 100%;
+    max-width: 960px;
 
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+main > .wrapper {
+  text-align: center;
 }
 
 /* language styles */
@@ -184,6 +193,7 @@ h1 {
     family: 'Open Sans', sans-serif;
     weight: bold;
   }
+  text-align: center;
 }
 
 // buttons
@@ -195,9 +205,11 @@ h1 {
 
 
 
-
 /* pages */
 // login, signup
+.login-box, .signup {
+  display: inline-block;
+}
 form.new_user {
   width: 300px;
   // padding: 32px;

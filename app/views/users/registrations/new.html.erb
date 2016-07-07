@@ -1,7 +1,7 @@
+<div class="signup-box">
+  <h1>Sign up</h1>
 
-<h1>Sign up</h1>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="content">
@@ -14,9 +14,10 @@
   <div class="footer">
     <button type="submit" name="commit" class="btn-1">signup</button>
   </div>
-<% end %>
+  <% end %>
 
-<%# render "users/shared/links" %>
+  <%# render "users/shared/links" %>
 
 
-<p>already have an account? <a href="<%= new_user_session_path %>">login</a></p>
+  <p>already have an account? <a href="<%= new_user_session_path %>">login</a></p>
+</div>

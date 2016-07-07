@@ -5,58 +5,23 @@
 @import "colors";
 @import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans|Varela+Round';
 
-main * {
-  // font-family: 'Varela Round', sans-serif;
+
+/* content */
+
+main {
   font-family: 'Open Sans', sans-serif;
   color: $brown;
-  text-align: center;
+}
+
+main > .wrapper {
+  text-align: left;
 }
 
 .lost {
   font-family: 'Lato', sans-serif;
   font-size: 64px;
   margin-bottom: 24px;
-}
-//
-// a {
-//   color: $green;
-// }
-// a:hover { color: $green-800 }
-
-/* header */
-// header {
-//   img {
-//     height: 64px;
-//     vertical-align: top;
-//     margin: 12px;
-//   }
-//   h1 {
-//     display: inline-block;
-//     font: {
-//       family: 'Varela Round', sans-serif;
-//       size: 48pt;
-//     }
-//     margin: 0px;
-//   }
-//
-//   margin: 48px 0px;
-// }
-
-
-/* content */
-
-// main
-main {
   text-align: center;
-}
-
-main > .wrapper {
-  display: inline-block;
-  width: 100%;
-  max-width: 960px;
-
-  padding: 24px;
-  box-sizing: border-box;
 }
 
 // top
