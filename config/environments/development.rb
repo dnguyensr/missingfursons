@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.gem "geokit"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -50,6 +51,8 @@ Rails.application.configure do
     path: '/:class/:attachment/:id_partition/:style/:filename'
   }
 end
+
+
 #
 # Paperclip.options[:image_magick_path] = "/opt/ImageMagick/bin"
 # Paperclip.options[:command_path] = "/opt/ImageMagick/bin"

@@ -1,0 +1,33 @@
+<% if current_user.animals.any? %>
+<table class="responsive">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Color</th>
+      <th>Age</th>
+      <th>Notes</th>
+      <th>Edit</th>
+      <th>Remove</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.name %></td>
+        <td><%= pet.breed.name %></td>
+        <td><%= pet.color%></td>
+        <td><%= pet.age%></td>
+        <td><%= pet.additional_notes %></td>
+        <td><a href="<%= @current_domain %>/animals/<%= pet.id%>/edit">Edit</a></td>
+        <td><%= link_to 'Remove', pet , method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+<h3> No pets have been registered </h3>
+<%= link_to 'Add a Pet', add_path %>
+<% end %>

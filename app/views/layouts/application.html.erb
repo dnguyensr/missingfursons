@@ -10,8 +10,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <!-- Attach the Table CSS and Javascript for responsive tables-->
-    <link rel="stylesheet" href="responsive-tables.css">
-    <script src="stylesheet" href="responsive-tables.js"></script>
+<!--     <link rel="stylesheet" href="responsive-tables.css">
+ -->
+ <!-- <script src="stylesheet" href="responsive-tables.js"></script> -->
     <%= render 'favicon' %>
     <title>MissingFursons</title>
   </head>
@@ -30,15 +31,20 @@
 
     <nav>
       <div class="left">
-        <span><%= link_to 'Home', root_path %></span>
-        <span><%= link_to 'Active Alerts', posts_path %></span>
+        <span><%= link_to 'Home', root_path %>|</span>
+        <span><%= link_to 'Active Alerts', posts_path %>|</span>
+        <% if user_signed_in? %>
+        <span><%= link_to 'Add a Pet', add_path %>|</span>
+        <% end %>
         <span><%= link_to 'Found a Pet?', resource_found_path %></span>
       </div>
       <div class="right">
+        <span><%= link_to 'Blog', blog_index_path %>|</span>
         <% if user_signed_in? %>
+        <span><%= link_to "Logged in as #{current_user.name}", user_show_path(current_user.id) %>|</span>
         <span><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></span>
         <% elsif %>
-        <span><%= link_to 'Register', new_user_registration_path %></span>
+        <span><%= link_to 'Register', new_user_registration_path %>|</span>
         <span><%= link_to 'Login', new_user_session_path %></span>
         <% end %>
       </div>
