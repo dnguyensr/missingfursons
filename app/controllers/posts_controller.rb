@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: [:found_submit]
 
+  geocode_ip_address
+
   def index
     @posts = Post.all
   end
@@ -101,6 +103,10 @@ class PostsController < ApplicationController
     @image_url = params[:image_url]
     render '/posts/showfound'
   end
+
+def filter_based_on_location
+end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

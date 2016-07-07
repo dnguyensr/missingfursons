@@ -18,11 +18,41 @@
       </tr>
     </thead>
 
+    <button onclick="getLocation()">Click here for a more localized list.</button>
+
+    <p id="ip", style="display: none"></p>
+
+<!--     <script>
+        var x = document.getElementById("ip");
+        console.log(x);
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        };
+
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+            var latit = position.coords.latitude;
+            var longit = position.coords.longitude;
+            console.log(position.coords.latitude, position.coords.longitude);
+            var loc = @posts.map { |post| Post.within(2, :origin => ["#{latit}", "#{longit}"])}
+            // loc = posty.within(2, :origin => [position.coords.latitude, position.coords.longitude]);
+
+        };
+
+    </script>
+ -->
 
     <tbody>
       <% markers = [] %>
       <% @posts.each do |post| %>
-      <% markers.push([post.lat, post.lng]) %>
+      <% markers.push([post.lat.to_f, post.lng.to_f]) %>
         <tr>
           <td><%= image_tag post.animal.image.url(:thumb) %></td>
           <td><%= post.user.name %></td>
@@ -45,9 +75,13 @@
 
 
 <%= link_to 'I lost my animal', root_path %>
+    <script>
+        var markers = <%= markers %>
+    </script>
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHO0RPuRPSeFMWo6htuwhUtb0Qpff2zl0&callback=initialize">
+
     </script>
   </div>
 </div>
