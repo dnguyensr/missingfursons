@@ -14,10 +14,11 @@ html, body {
 input { -webkit-appearance:none; outline: none; }
 
 /* colors */
+@import 'colors';
 $brown: #7D3F29;
 
 /* fonts */
-@import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans:400,700|Varela+Round';
+@import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans:400,700|Roboto:400,700|Varela+Round';
 
 /* application styles  */
 
@@ -28,6 +29,7 @@ div {
 
 a {
   color: inherit; font-family: inherit;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -195,10 +197,10 @@ h1 {
 
 
 /* pages */
-// login
+// login, signup
 form.new_user {
   width: 300px;
-  padding: 32px;
+  // padding: 32px;
 
   .content {
     div.input {width: 100%;}
@@ -222,16 +224,17 @@ form.new_user {
       border-bottom-width: 2px;
       outline: none;
     }
+    span {
+      display: inline-block;
+      margin: 0px 4px;
+    }
+    .error { color: $pink-a400 }
   }
   .footer {
     width: 100%;
     text-align: right;
   }
-  a {
-    font-weight: bold;
-  }
 }
-
 
 @media print {
   .print { display: initial; }

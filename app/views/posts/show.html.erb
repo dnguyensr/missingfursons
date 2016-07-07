@@ -1,16 +1,9 @@
-<p id="notice" class="p_hide"><%= notice %></p>
+<p id="notice" class="hide"><%= notice %></p>
 
 
-<!-- <h1>
-  <strong>LOST <%= @post.animal.breed.species.name %> </strong>
-</h1> -->
-
-<main>
-  <div class="wrapper">
-
-    <h1 class="lost">
+    <div class="lost">
       LOST <%= @post.animal.breed.species.name.upcase %>
-    </h1>
+    </div>
 
     <li>
       <div class="image_cont">
@@ -63,7 +56,7 @@
 
     </p>
 
-    <div class="p_hide">
+    <div class="hide">
       <% if (user_signed_in?) %>
         <p> Simply <i>print</i> this page to create a flyer </p>
         <!-- <p> If you would like to automatically create a flyer for this pet, print this page </p> -->
@@ -76,5 +69,3 @@
     </div>
 
     <span class="print"> This flyer was created by Missing Fursons </span>
-  </div>
-</main>
