@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get 'home2' => 'home#index'
   get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
+  get 'found_form' => 'posts#found_form'
+  get 'found_submit' => 'posts#found_submit'
+
+  # JSON 
+  get 'posts_json' => 'posts#index_json'
+  get 'animals_json' => 'animals#index_json'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
