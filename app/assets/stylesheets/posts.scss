@@ -13,11 +13,10 @@ main {
   color: $brown;
 }
 
-main > .wrapper {
-  text-align: left;
-}
+.post-show-box { text-align: left; width: 100%; }
 
 .lost {
+  display: block;
   font-family: 'Lato', sans-serif;
   font-size: 64px;
   margin-bottom: 24px;
