@@ -7,6 +7,35 @@ function initialize() {
         mapTypeId: 'roadmap'
     };
 
+    // Info Window Content
+    var infoWindowContent = [];
+    // var infoWindowContent = [
+    //     ["Hello"],
+    //     ["Test"]
+    // ];
+
+    $.ajax({
+        url: '/posts_json',
+        dataType: "json"
+    })
+    .done(function(response){
+        // console.log(JSON.stringify(response));
+        for (i=0; i<response.length; i++){
+            //console.log(response[i]);
+            // infoWindowContent.push([response[i].animal.name, response[i].animal.breed.name])
+            var petname = response[i].animal.name;
+            var petbreed = response[i].animal.breed.name;
+            // var petcolor
+            // var pet_additional
+            // var contact_name
+            // var contact_phone
+            // var contact_email
+            var image_placement = "'<img src="+response[i].animal.image_url_thumb+">'";
+            infoWindowContent.push([petname,petbreed,image_placement])
+            };
+            console.log(infoWindowContent);
+    });
+
     // Display a map on the page
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     map.setTilt(45);
@@ -16,12 +45,11 @@ function initialize() {
     //    ['London Eye, London', 51.503454,-0.119562],
     //    ['Palace of Westminster, London', 51.499633,-0.124755]
     //];
+    //var infoWindowContent = [
+    //     ["Hello"],
+    //     ["Test"]
+    // ];
 
-    // Info Window Content
-    var infoWindowContent = [
-        [],
-        []
-    ];
 
     // Display multiple markers on a map
     var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -39,7 +67,8 @@ function initialize() {
         // Allow each marker to have an info window
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.setContent("<b>" + infoWindowContent[i][0] + "<b>" + "<br>" + infoWindowContent[i][2] + "<br>" + infoWindowContent[i][1]);
+                //infoWindow.setContent('<img src=http://missingfursons.s3.amazonaws.com/animals/images/000/000/010/thumb/alicia-puppy.JPG?1467775370>');
                 infoWindow.open(map, marker);
             }
         })(marker, i));

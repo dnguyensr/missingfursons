@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   get 'alert' => 'home#alert'
   get 'found_form' => 'posts#found_form'
   get 'found_submit' => 'posts#found_submit'
+  get 'filter_based_on_location' => 'posts#filter_based_on_location'
 
-  # JSON 
+  # JSON
   get 'posts_json' => 'posts#index_json'
   get 'animals_json' => 'animals#index_json'
 

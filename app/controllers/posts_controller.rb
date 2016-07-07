@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   end
 
   def index_json
-    render json: Post.all
+    posts = Post.includes(animal: :breed).as_json(include: { animal: { include: :breed, methods: :image_url_thumb } })
+    puts posts
+    render json: posts
   end
 
   # GET /posts/1
@@ -92,12 +94,7 @@ class PostsController < ApplicationController
   end
 
   def found_submit
-    puts "======================PARAMS ARE:===================="
-    puts params
     @breed = Breed.find_by(name: params[:breed])
-    puts "======================BREED IS ========================"
-    puts params[:breed]
-    p @breed
     @species = @breed.species
     @color = params[:color]
     @location = params[:location]
@@ -109,6 +106,7 @@ class PostsController < ApplicationController
   end
 
 def filter_based_on_location
+
 end
 
 

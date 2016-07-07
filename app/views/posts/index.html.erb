@@ -55,6 +55,7 @@
 
     <tbody>
       <% markers = [] %>
+      <% content_for_window = [] %>
       <% @posts.each do |post| %>
       <% markers.push([post.lat.to_f, post.lng.to_f]) %>
         <tr>
