@@ -1,14 +1,17 @@
 /* A_P_P_L_I_C_A_T_I_O_N_ S_C_S_S_ :Dr */
 /*
- *= require_tree .
  *= require_self
  */
 
 /* normalization */
+* { box-sizing: border-box; }
+
 html, body {
   margin: 0px;
   padding: 0px;
 }
+
+input { -webkit-appearance:none; outline: none; }
 
 /* colors */
 $brown: #7D3F29;
@@ -36,6 +39,7 @@ a {
 
 // header
 body a {
+
 }
 
 header {
@@ -149,6 +153,22 @@ nav {
   }
 }
 
+// main
+
+main {
+  width: 100%;
+  text-align: center;
+}
+
+main {
+  color: $brown;
+  font-family: 'Roboto'
+}
+
+main .wrapper {
+
+}
+
 /* language styles */
 
 h1, h2, h3, h4 {
@@ -174,7 +194,47 @@ h1 {
 
 
 
+/* pages */
+// login
+form.new_user {
+  width: 300px;
+  padding: 32px;
+
+  .content {
+    div.input {width: 100%;}
+    label { display: none; }
+    input {
+      display: block;
+      width: 100%;
+
+      margin: 12px 0px;
+      padding: 4px 0px 8px 0px;
+      color: inherit;
+      font: {
+        family: inherit;
+        weight: normal;
+        size: 20px;
+      }
+      border: none;
+      border-bottom: 1px solid $brown;
+    }
+    input:focus {
+      border-bottom-width: 2px;
+      outline: none;
+    }
+  }
+  .footer {
+    width: 100%;
+    text-align: right;
+  }
+  a {
+    font-weight: bold;
+  }
+}
 
 
-
+@media print {
+  .print { display: initial; }
+  nav, header { display: none; }
+}
 * { }

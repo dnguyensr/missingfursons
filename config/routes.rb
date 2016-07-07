@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'home2' => 'home#index'
   get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
+  get 'found_form' => 'posts#found_form'
+  get 'found_submit' => 'posts#found_submit'
 
   # JSON 
   get 'posts_json' => 'posts#index_json'

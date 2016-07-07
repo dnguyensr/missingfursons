@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%# this would now only load application.css, not the whole tree %>
+    <%= stylesheet_link_tag :application, :media => "all" %>
+
+    <%# and this would load the controller specific file %>
+    <%= stylesheet_link_tag params[:controller] %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <!-- Attach the Table CSS and Javascript for responsive tables-->
@@ -21,8 +27,7 @@
         <h1>Missing Fursons</h1>
       </div>
       <div class="mid-layer"></div>
-      <div class="bottom-layer">
-      </div>
+      <div class="bottom-layer"></div>
     </header>
     </a>
 
