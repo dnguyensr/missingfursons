@@ -21,6 +21,8 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @pets = Animal.where(user_id: current_user)
+    # @pets = Animal.find_by(user: current_user)
     @post = Post.new
   end
 
@@ -37,7 +39,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @post.animal = current_user.animals.last
+    # @post.animal = current_user.animals.last
     @post.found_status = false
     @post.lat = Post.geocode(@post.location).lat
     @post.lng = Post.geocode(@post.location).lng

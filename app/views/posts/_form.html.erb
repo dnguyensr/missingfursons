@@ -11,11 +11,14 @@
     </div>
   <% end %>
     <div>Please include your preferred method of contact: email and/or phone</div>
+    <br><br>
+    <%= p.input :animal, label: "Pet's Name", collection: @pets, priority: @pets.last %>
     <%= p.input :location %>
     <%= p.input :phone %>
     <%= p.input :email %>
     <%= p.input :date, html5: true %>
 
 
-    <%= p.button :submit %>
+    <%= p.button :submit, label: "Create Alert", class: "btn-1"  %>
 <% end %>
+<br><br>

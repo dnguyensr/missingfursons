@@ -4,10 +4,10 @@
   <div id="map_canvas" class="mapping"></div>
 </div>
 
-<h1>List of Missing Pets</h1>
-
 <div class="row">
   <div class="large-12 columns">
+
+  <h1>Active Alerts</h1>
 
   <table class="responsive">
     <thead>
@@ -73,7 +73,7 @@
           <td><%= post.animal.name%></td>
           <td><%= post.location %></td>
           <td><%= link_to 'More details', post %></td>
-          <% if post.user == current_user  || current_user.admin == true %>
+          <% if post.user == current_user  || current_user && current_user.admin == true %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
           <% end %>
@@ -83,10 +83,13 @@
   </table>
 
 
-<%= link_to 'I lost my animal', root_path %>
+
     <script>
         var markers = <%= markers %>
     </script>
+
+<%= link_to 'I lost my animal', root_path, class: "btn-1"  %>
+
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHO0RPuRPSeFMWo6htuwhUtb0Qpff2zl0&callback=initialize">
