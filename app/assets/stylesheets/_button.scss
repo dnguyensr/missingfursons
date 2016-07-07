@@ -64,12 +64,12 @@ html span {
 }
 .btn-1:hover {
   color: $brown;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 8px $orange-a200;
 }
 .btn-1:hover:after {
   border-width: 120px 60px 0 0;
 }
 .btn-1:active {
   background: $yellow-dark;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 0px $orange-a200;
 }
