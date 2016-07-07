@@ -3,6 +3,7 @@ function initialize() {
     var map;
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
+        zoom: 50,
         mapTypeId: 'roadmap'
     };
 
@@ -18,13 +19,8 @@ function initialize() {
 
     // Info Window Content
     var infoWindowContent = [
-        ['<div class="info_content">' +
-        '<h3>London Eye</h3>' +
-        '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
-        ['<div class="info_content">' +
-        '<h3>Palace of Westminster</h3>' +
-        '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-        '</div>']
+        [],
+        []
     ];
 
     // Display multiple markers on a map
@@ -54,7 +50,7 @@ function initialize() {
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(14);
+        this.setZoom(12);
         google.maps.event.removeListener(boundsListener);
     });
 };
