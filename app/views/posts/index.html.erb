@@ -18,8 +18,11 @@
       </tr>
     </thead>
 
+
     <tbody>
+      <% markers = [] %>
       <% @posts.each do |post| %>
+      <% markers.push([post.lat, post.lng]) %>
         <tr>
           <td><%= image_tag post.animal.image.url(:thumb) %></td>
           <td><%= post.user.name %></td>
@@ -35,9 +38,16 @@
     </tbody>
   </table>
 
+<div id="map_wrapper">
+    <div id="map_canvas" class="mapping"></div>
+</div>
+
+
 
 <%= link_to 'I lost my animal', root_path %>
 
-
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHO0RPuRPSeFMWo6htuwhUtb0Qpff2zl0&callback=initialize">
+    </script>
   </div>
 </div>

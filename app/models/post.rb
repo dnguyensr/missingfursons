@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   after_save :post_to_facebook, :post_to_twitter
 
   acts_as_mappable
+  geocode_ip_address
 
   def set_default_found_status
     self.found_status = false
