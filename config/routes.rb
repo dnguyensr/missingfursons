@@ -7,15 +7,20 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
-
-
+  get 'users/:id' => 'users#show', as: :user_show
   get 'home2' => 'home#index'
   get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
   get 'found_form' => 'posts#found_form'
   get 'found_submit' => 'posts#found_submit'
+  get 'filter_based_on_location' => 'posts#filter_based_on_location'
+  get 'add' => 'animals#add'
+  get 'new2' => 'animals#new2'
+  post 'create2' => 'animals#create2'
 
-  # JSON 
+  resources :blog, only: :index
+
+  # JSON
   get 'posts_json' => 'posts#index_json'
   get 'animals_json' => 'animals#index_json'
 

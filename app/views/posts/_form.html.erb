@@ -12,6 +12,7 @@
   <% end %>
   <div class="content">
     <p>Please include your preferred method of contact: email and/or phone</p>
+    <%= p.input :animal, label: "Pet's Name", collection: @pets %>
     <%= p.input :location,  input_html: { placeholder: "location" } %>
     <%= p.input :phone,     input_html: { placeholder: "contact phone" } %>
     <%= p.input :email,     input_html: { placeholder: "contact email" } %>
@@ -20,6 +21,6 @@
 
   <div class="footer">
     <%= link_to 'Back', posts_path %>
-    <button type="submit" name="commit" class="btn-1">submit</button>
+    <button type="submit" name="commit" class="btn-1">create alert</button>
   </div>
 <% end %>

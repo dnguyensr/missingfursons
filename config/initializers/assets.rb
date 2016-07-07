@@ -15,7 +15,7 @@ Rails.application.config.assets.version = '1.0'
 # or include them individually
 # Rails.application.config.assets.precompile += %w( home.css )
 
-%w( home application posts animals registrations ).each do |controller|
+%w( home application posts users blog animals registrations ).each do |controller|
   Rails.application.config.assets.precompile += ["#{controller}.js.coffee", "#{controller}.css"]
 end
 
