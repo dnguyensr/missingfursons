@@ -2,12 +2,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: [:found_submit]
 
+  geocode_ip_address
+
   def index
     @posts = Post.all
   end
 
   def index_json
-    render json: Post.all
+    posts = Post.includes(animal: :breed).as_json(include: { animal: { include: :breed, methods: :image_url_thumb } })
+    puts posts
+    render json: posts
   end
 
   # GET /posts/1
@@ -37,6 +41,8 @@ class PostsController < ApplicationController
     @post.user = current_user
     # @post.animal = current_user.animals.last
     @post.found_status = false
+    @post.lat = Post.geocode(@post.location).lat
+    @post.lng = Post.geocode(@post.location).lng
 
     respond_to do |format|
       if @post.save
@@ -90,12 +96,7 @@ class PostsController < ApplicationController
   end
 
   def found_submit
-    puts "======================PARAMS ARE:===================="
-    puts params
     @breed = Breed.find_by(name: params[:breed])
-    puts "======================BREED IS ========================"
-    puts params[:breed]
-    p @breed
     @species = @breed.species
     @color = params[:color]
     @location = params[:location]
@@ -105,6 +106,15 @@ class PostsController < ApplicationController
     @image_url = params[:image_url]
     render '/posts/showfound'
   end
+
+def filter_based_on_location()
+    puts "PARAMS ARE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts params
+    posts = Post.within(5, :origin => "707 Broadway, San Diego")
+    puts posts
+    render json: posts
+end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
