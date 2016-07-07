@@ -1,8 +1,8 @@
 
-<h1>Lose your pet?</h1>
+<h1>Lost your pet?</h1>
 <% if user_signed_in? %>
-  <%= link_to 'Create a Meow Alert', "/animals/new?species=Cat" %>
-  <%= link_to 'Create a Woof Alert', "/animals/new?species=Dog" %>
+  <%= link_to 'Create a Meow Alert', "/animals/new?species=Cat", class: "btn-1" %>
+  <%= link_to 'Create a Woof Alert', "/animals/new?species=Dog", class: "btn-1" %>
 <% else %>
   <%= link_to 'signup', new_user_registration_path, class: "btn-1" %>
   <%= link_to 'login', new_user_session_path, class: "btn-1" %>

@@ -26,7 +26,7 @@
           <td><%= post.animal.name%></td>
           <td><%= post.location %></td>
           <td><%= link_to 'More details', post %></td>
-          <% if post.user == current_user  || current_user.admin == true %>
+          <% if post.user == current_user  || current_user && current_user.admin == true %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
           <% end %>

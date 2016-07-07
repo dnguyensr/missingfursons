@@ -6,6 +6,38 @@ class AnimalsController < ApplicationController
   # def index
   #   @animals = Animal.all
   # end
+  def add
+    if current_user
+      @animal = Animal.new
+      @species = Species.all
+      @breeds = Breed.all
+    else
+      redirect_to new_user_session_path
+    end
+    # render :'animals/add'
+  end
+  def new2
+    @species = Species.find_by(name: params[:species])
+    @animal = Animal.new
+    @breeds_dog = Breed.where(species_id: 1)
+    @breeds_cat = Breed.where(species_id: 2)
+  end
+
+  def create2
+    @animal = Animal.new(post_params)
+    @animal.breed_id = params["animal"]["breed"].to_i
+    @animal.user = current_user
+    # @animal.breed = Breed.find_by(name: 'Golden Retriever')
+    respond_to do |format|
+      if @animal.save
+        format.html { redirect_to "/users/#{current_user.id}", notice: 'Pet was successfully Addded.' }
+        format.json { redirect_to "/users/#{current_user.id}", status: :created, location: @animal }
+      else
+        format.html { render :new }
+        format.json { render json: @animal.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def index_json
     arr = []
@@ -34,7 +66,9 @@ class AnimalsController < ApplicationController
 
   # GET /animals/1/edit
   def edit
-    if @animal.user != current_user && current_user.admin == false
+    @animal = Animal.find(params[:id])
+    @breeds = Breed.find_by(species_id: @animal.species.id)
+    if @animal.user != current_user || !current_user || current_user && current_user.admin == false
       redirect_to posts_path
     end
   end
@@ -79,9 +113,10 @@ class AnimalsController < ApplicationController
   # DELETE /animals/1
   # DELETE /animals/1.json
   def destroy
+    @animal = Animal.find(params[:id])
     @animal.destroy
     respond_to do |format|
-      format.html { redirect_to animals_url, notice: 'Animal was successfully deleted from database.' }
+      format.html { redirect_to root_path, notice: 'Animal was successfully deleted from database.' }
       format.json { head :no_content }
     end
   end
