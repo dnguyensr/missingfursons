@@ -55,7 +55,9 @@ class AnimalsController < ApplicationController
 
   # GET /animals/1/edit
   def edit
-    if current_user && @animal.user != current_user && current_user.admin == false
+    @animal = Animal.find(params[:id])
+    @breeds = Breed.find_by(species_id: @animal.species.id)
+    if @animal.user != current_user || !current_user || current_user && current_user.admin == false
       redirect_to posts_path
     end
   end
