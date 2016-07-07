@@ -4,8 +4,15 @@ class AnimalsController < ApplicationController
   # GET /animals
   # GET /animals.json
   # def index
-  #   @animals = Post.all
+  #   @animals = Animal.all
   # end
+
+  def index_json
+    arr = []
+
+    Animal.all.each { |animal| arr.push({name: animal.name, age: animal.age, imageURL: animal.image.url, phone: animal.post.phone}) }
+    render json: arr
+  end
 
   # GET /animals/1
   # GET /animals/1.json
