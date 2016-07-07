@@ -1,23 +1,23 @@
-<div class="row">
-  <div class="small-6 columns">
+<div class="signup-box">
+  <h1>Sign up</h1>
 
-    <h2>Sign up</h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :name, required: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-    <% end %>
-
-    <%= render "users/shared/links" %>
+  <div class="content">
+    <%= f.input :name, required: true, input_html: { placeholder: "name" } %>
+    <%= f.input :email, required: true, autofocus: true, input_html: { placeholder: "email" } %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { placeholder: "password" } %>
+    <%= f.input :password_confirmation, required: true, input_html: { placeholder: "confirm password" } %>
   </div>
+
+  <div class="footer">
+    <button type="submit" name="commit" class="btn-1">signup</button>
+  </div>
+  <% end %>
+
+  <%# render "users/shared/links" %>
+
+
+  <p>already have an account? <a href="<%= new_user_session_path %>">login</a></p>
 </div>

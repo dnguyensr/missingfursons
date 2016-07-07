@@ -2,87 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// nav ul li {
-//   display:inline;
-// }
-//
-// body {
-//   background: #D2B48C;
-//   width: 75%;
-//   display: table;
-//   margin: 0 auto;
-//   padding: 20px 40px 40px;
-//   border: solid 1px black;
-//   margin-top: 20px;
-//   text-align: left;
-// }
-//
-// #container {
-// }
-//
-// .wrapper {
-// }
-
 @import "colors";
 @import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans|Varela+Round';
-
-$green: $green-400;
-
-* {
-  // font-family: 'Varela Round', sans-serif;
-  font-family: 'Open Sans', sans-serif;
-  color: $blue-grey-600;
-  text-align: center;
-}
-
-body {
-  background: white;
-}
-
-h1.lost {
-  font-family: 'Lato', sans-serif;
-  // font-size: 64pt;
-}
-//
-// a {
-//   color: $green;
-// }
-// a:hover { color: $green-800 }
-
-/* header */
-// header {
-//   img {
-//     height: 64px;
-//     vertical-align: top;
-//     margin: 12px;
-//   }
-//   h1 {
-//     display: inline-block;
-//     font: {
-//       family: 'Varela Round', sans-serif;
-//       size: 48pt;
-//     }
-//     margin: 0px;
-//   }
-//
-//   margin: 48px 0px;
-// }
 
 
 /* content */
 
-// main
 main {
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: $brown;
 }
 
-main > .wrapper {
-  display: inline-block;
-  width: 100%;
-  max-width: 960px;
+.post-show-box { text-align: left; width: 100%; }
 
-  padding: 24px;
-  box-sizing: border-box;
+.lost {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 64px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 // top
@@ -93,7 +31,7 @@ main > .wrapper li {
 }
 
 div.image_cont, div.map_cont {
-  // display: inline-block;
+  display: block;
 }
 
 div.image_cont span, div.map_cont span {
@@ -132,7 +70,7 @@ div.map_cont iframe {
 
 p {
   text-align: left;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 iframe {
@@ -142,13 +80,13 @@ iframe {
 
 /* flyer */
 .print { display: none; }
-
 @media print {
-  .print { display: initial; }
-  .row, .p_hide { display: none; }
+  .print { display: initial; } .hide { display: none; }
 
-  h1.lost {
-    font-size: 64pt;
+  .lost {
+    font-size: 80px;
+    margin: 0px;
   }
+
 
 }
