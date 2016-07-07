@@ -24,11 +24,10 @@
 
     <button onclick="getLocation()">Click here for a more localized list.</button>
 
-    <p id="ip", style="display: none"></p>
+    <p id="ip"></p>
 
-<!--     <script>
+   <!--  <script>
         var x = document.getElementById("ip");
-        console.log(x);
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -44,18 +43,28 @@
             "<br>Longitude: " + position.coords.longitude;
             var latit = position.coords.latitude;
             var longit = position.coords.longitude;
-            console.log(position.coords.latitude, position.coords.longitude);
-            var loc = @posts.map { |post| Post.within(2, :origin => ["#{latit}", "#{longit}"])}
-            // loc = posty.within(2, :origin => [position.coords.latitude, position.coords.longitude]);
-
         };
 
-    </script>
- -->
+    </script> -->
+
+     <!-- <script>
+      var x = document.getElementById("ip");
+
+     navigator.geolocation.getCurrentPosition(positionArray);
+
+     function positionArray(position) {
+      var latit = position.coords.latitude;
+      var longit = position.coords.longitude;
+
+
+      console.log("loc in html is " + loc)
+    }
+
+    </script> -->
+
 
     <tbody>
       <% markers = [] %>
-      <% content_for_window = [] %>
       <% @posts.each do |post| %>
       <% markers.push([post.lat.to_f, post.lng.to_f]) %>
         <tr>

@@ -2,6 +2,7 @@ function initialize() {
   console.log("initialized")
     var map;
     var bounds = new google.maps.LatLngBounds();
+    // console.log(location);
     var mapOptions = {
         zoom: 50,
         mapTypeId: 'roadmap'
@@ -14,15 +15,31 @@ function initialize() {
     //     ["Test"]
     // ];
 
+    // var x = document.getElementById("ip");
+
+    //  // (navigator.geolocation) {
+    //    navigator.geolocation.getCurrentPosition(positionArray);
+    //    // console.log("GEO IS " + geo)
+    //  // };
+
+
+    // function positionArray(position) {
+    //     // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    //     var latit = position.coords.latitude;
+    //     var longit = position.coords.longitude;
+    //     console.log ("this will return " + [latit, longit])
+    //     var loc = [latit, longit];
+    //     $.post('<%= filter_based_on_location_path %>', loc);
+    //     // return [latit, longit];
+    // };
+
+
     $.ajax({
         url: '/posts_json',
         dataType: "json"
     })
     .done(function(response){
-        // console.log(JSON.stringify(response));
         for (i=0; i<response.length; i++){
-            //console.log(response[i]);
-            // infoWindowContent.push([response[i].animal.name, response[i].animal.breed.name])
             var petname = response[i].animal.name;
             var petbreed = response[i].animal.breed.name;
             // var petcolor
@@ -33,7 +50,7 @@ function initialize() {
             var image_placement = "'<img src="+response[i].animal.image_url_thumb+">'";
             infoWindowContent.push([petname,petbreed,image_placement])
             };
-            console.log(infoWindowContent);
+            // console.log(infoWindowContent);
     });
 
     // Display a map on the page
@@ -68,7 +85,6 @@ function initialize() {
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
                 infoWindow.setContent("<b>" + infoWindowContent[i][0] + "<b>" + "<br>" + infoWindowContent[i][2] + "<br>" + infoWindowContent[i][1]);
-                //infoWindow.setContent('<img src=http://missingfursons.s3.amazonaws.com/animals/images/000/000/010/thumb/alicia-puppy.JPG?1467775370>');
                 infoWindow.open(map, marker);
             }
         })(marker, i));

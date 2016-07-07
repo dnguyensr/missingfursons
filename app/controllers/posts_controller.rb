@@ -105,8 +105,12 @@ class PostsController < ApplicationController
     render '/posts/showfound'
   end
 
-def filter_based_on_location
-
+def filter_based_on_location()
+    puts "PARAMS ARE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts params
+    posts = Post.within(5, :origin => "707 Broadway, San Diego")
+    puts posts
+    render json: posts
 end
 
 
