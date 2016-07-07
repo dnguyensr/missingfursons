@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def index_json
-    # render json: {posts: Post.all, animals: Animal.all}
     render json: Post.all
   end
 

@@ -8,16 +8,10 @@ class AnimalsController < ApplicationController
   # end
 
   def index_json
-    # imageURL
-    # name
-    # age
     arr = []
 
-    Animal.all.each { |animal| arr.push({name: animal.name, age: animal.age, imageURL: animal.image.url}) }
-
-    # render json: Animal.all.map { |animal| animal.image } + Animal.all
+    Animal.all.each { |animal| arr.push({name: animal.name, age: animal.age, imageURL: animal.image.url, phone: animal.post.phone}) }
     render json: arr
-    # render json: Animal.all
   end
 
   # GET /animals/1
