@@ -3,7 +3,7 @@
 <div class="row">
   <div class="large-12 columns">
 
-  <h1>Listing Posts</h1>
+  <h1>Active Alerts</h1>
 
   <table class="responsive">
     <thead>
@@ -26,7 +26,7 @@
           <td><%= post.animal.name%></td>
           <td><%= post.location %></td>
           <td><%= link_to 'More details', post %></td>
-          <% if post.user == current_user  || current_user.admin == true %>
+          <% if post.user == current_user  || current_user && current_user.admin == true %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
           <% end %>
@@ -36,7 +36,7 @@
   </table>
 
 
-<%= link_to 'I lost my animal', root_path %>
+<%= link_to 'I lost my animal', root_path, class: "btn-1"  %>
 
 
   </div>

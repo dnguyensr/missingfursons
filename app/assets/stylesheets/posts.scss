@@ -5,58 +5,22 @@
 @import "colors";
 @import 'https://fonts.googleapis.com/css?family=Lato|Open+Sans|Varela+Round';
 
-main * {
-  // font-family: 'Varela Round', sans-serif;
-  font-family: 'Open Sans', sans-serif;
-  color: $brown;
-  text-align: center;
-}
-
-.lost {
-  font-family: 'Lato', sans-serif;
-  font-size: 64px;
-  margin-bottom: 24px;
-}
-//
-// a {
-//   color: $green;
-// }
-// a:hover { color: $green-800 }
-
-/* header */
-// header {
-//   img {
-//     height: 64px;
-//     vertical-align: top;
-//     margin: 12px;
-//   }
-//   h1 {
-//     display: inline-block;
-//     font: {
-//       family: 'Varela Round', sans-serif;
-//       size: 48pt;
-//     }
-//     margin: 0px;
-//   }
-//
-//   margin: 48px 0px;
-// }
-
 
 /* content */
 
-// main
 main {
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: $brown;
 }
 
-main > .wrapper {
-  display: inline-block;
-  width: 100%;
-  max-width: 960px;
+.post-show-box { text-align: left; width: 100%; }
 
-  padding: 24px;
-  box-sizing: border-box;
+.lost {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 64px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 // top

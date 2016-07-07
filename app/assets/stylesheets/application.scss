@@ -3,6 +3,15 @@
  *= require_self
  */
 
+/* sass mixins */
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 /* normalization */
 * { box-sizing: border-box; }
 
@@ -11,7 +20,7 @@ html, body {
   padding: 0px;
 }
 
-input { -webkit-appearance:none; outline: none; }
+input, textarea { -webkit-appearance:none; outline: none; resize: none; }
 
 /* colors */
 @import 'colors';
@@ -167,8 +176,17 @@ main {
   font-family: 'Roboto'
 }
 
-main .wrapper {
+main > .wrapper {
+    display: inline-block;
+    width: 100%;
+    max-width: 960px;
 
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+main > .wrapper {
+  text-align: center;
 }
 
 /* language styles */
@@ -184,6 +202,7 @@ h1 {
     family: 'Open Sans', sans-serif;
     weight: bold;
   }
+  text-align: center;
 }
 
 // buttons
@@ -195,17 +214,25 @@ h1 {
 
 
 
-
 /* pages */
 // login, signup
-form.new_user {
+.login-box, .signup-box {
+  display: inline-block;
+}
+.center-box {
+  width: 532px;
+  text-align: center;
+}
+
+form {
   width: 300px;
+  display: inline-block;
   // padding: 32px;
 
   .content {
     div.input {width: 100%;}
     label { display: none; }
-    input {
+    input, textarea {
       display: block;
       width: 100%;
 
@@ -222,18 +249,25 @@ form.new_user {
     }
     input:focus {
       border-bottom-width: 2px;
-      outline: none;
     }
     span {
       display: inline-block;
       margin: 0px 4px;
     }
     .error { color: $pink-a400 }
+    textarea {
+      height: 128px;
+    }
   }
   .footer {
     width: 100%;
     text-align: right;
   }
+}
+
+
+@include placeholder {
+  color: transparentize($brown, 0.6);
 }
 
 @media print {
