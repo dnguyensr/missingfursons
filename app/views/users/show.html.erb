@@ -1,7 +1,3 @@
-<% @pets.each do |pet|%>
-<%= pet.name %>
-<% end %>
-
 <table class="responsive">
   <thead>
     <tr>
@@ -10,7 +6,8 @@
       <th>Color</th>
       <th>Age</th>
       <th>Notes</th>
-      <th>Image</th>
+      <th>Edit</th>
+      <th>Remove</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +20,7 @@
         <td><%= pet.color%></td>
         <td><%= pet.age%></td>
         <td><%= pet.additional_notes %></td>
+        <td><a href= "<%= @current_domain %>/animals/<%= pet.id%>/edit">Edit</a></td>
       </tr>
     <% end %>
   </tbody>
