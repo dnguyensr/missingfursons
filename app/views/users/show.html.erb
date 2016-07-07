@@ -20,7 +20,8 @@
         <td><%= pet.color%></td>
         <td><%= pet.age%></td>
         <td><%= pet.additional_notes %></td>
-        <td><a href= "<%= @current_domain %>/animals/<%= pet.id%>/edit">Edit</a></td>
+        <td><a href="<%= @current_domain %>/animals/<%= pet.id%>/edit">Edit</a></td>
+        <td><%= link_to 'Remove', pet , method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
       </tr>
     <% end %>
   </tbody>

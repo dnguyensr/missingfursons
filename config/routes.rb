@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
-  get 'users/:id' => 'users#show'
+  get 'users/:id' => 'users#show', as: :user_show
   get 'home2' => 'home#index'
   get 'resource_found' => 'posts#resource_found'
   get 'alert' => 'home#alert'
