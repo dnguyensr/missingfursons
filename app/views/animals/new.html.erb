@@ -1,22 +1,21 @@
+<div class="center-box">
+  <h1>Tell us about your <%= @species.name %></h1>
 
+  <p>Safety tip from the Humane Society: leave out one identifying characteristic and ask the person who finds your pet to describe it</p>
 
-<h1>Tell us about your <%= @species.name %></h1>
+  <% if @animal.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-<p>Safety tip from the Humane Society: leave out one identifying characteristic and ask the person who finds your pet to describe it</p>
-
-<% if @animal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
+    <ul>
       <% @animal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-<% end %>
+    </ul>
+  </div>
+  <% end %>
 
-<%= simple_form_for @animal do |a| %>
+  <%= simple_form_for @animal do |a| %>
   <div class="content">
     <%= a.input :name, input_html: { placeholder: "name" } %>
     <% if @species.id == 1 %>
@@ -33,5 +32,8 @@
   </div>
 
 
-  <%= a.button :submit, "Save" %>
-<% end %>
+  <div class="footer">
+    <button type="submit" name="commit" class="btn-1">next</button>
+  </div>
+  <% end %>  
+</div>
