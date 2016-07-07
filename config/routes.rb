@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   # JSON 
   get 'posts_json' => 'posts#index_json'
+  get 'animals_json' => 'animals#index_json'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
