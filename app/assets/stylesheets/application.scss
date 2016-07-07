@@ -218,6 +218,9 @@ h1 {
 // login, signup
 .login-box, .signup-box {
   display: inline-block;
+  p {
+    font-size: initial;
+  }
 }
 .center-box {
   width: 532px;
@@ -273,5 +276,16 @@ form {
 @media print {
   .print { display: initial; }
   nav, header { display: none; }
+}
+
+@media screen and (max-width: 584px) {
+  header {
+    height: 320px;
+  }
+}
+@media screen and (max-width: 492px) {
+  header {
+    height: 384px;
+  }
 }
 * { }

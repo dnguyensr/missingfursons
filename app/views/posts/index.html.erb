@@ -1,43 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="large-12 columns">
+<h1>Listing Posts</h1>
 
-  <h1>Listing Posts</h1>
-
-  <table class="responsive">
-    <thead>
-      <tr>
-        <th>Pic</th>
-        <th>Owner</th>
-        <th>Lost</th>
-        <th>Location</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr>
-          <td><%= image_tag post.animal.image.url(:thumb) %></td>
-          <td><%= post.user.name %></td>
-          <td><%= post.animal.name%></td>
-          <td><%= post.location %></td>
-          <td><%= link_to 'More details', post %></td>
-          <% if post.user == current_user  || current_user.admin == true %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-<%= link_to 'I lost my animal', root_path %>
-
-
-  </div>
-</div>
+<%= render partial: 'index', locals: { posts: @posts } %>
