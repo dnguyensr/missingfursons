@@ -7,9 +7,13 @@ class AnimalsController < ApplicationController
   #   @animals = Animal.all
   # end
   def add
-    @animal = Animal.new
-    @species = Species.all
-    @breeds = Breed.all
+    if current_user
+      @animal = Animal.new
+      @species = Species.all
+      @breeds = Breed.all
+    else
+      redirect_to new_user_session_path
+    end
     # render :'animals/add'
   end
   def new2
