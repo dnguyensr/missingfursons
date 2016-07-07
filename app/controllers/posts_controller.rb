@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  # require 'rqrcode'
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: [:found_submit]
 
@@ -10,8 +9,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    current_url = "http://#{request.host+request.fullpath}"
-    @qr = RQRCode::QRCode.new( current_url , :size => 2, :level => :m )
   end
 
   # GET /posts/new
