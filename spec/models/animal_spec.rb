@@ -5,7 +5,10 @@ RSpec.describe Animal, :type => :model do
     dog = Animal.create(breed_id: 1, name: "doge", color: "gold", additional_notes: "additional notes", age: 3)
     # cat = User.create(name: 'Bill', email: 'bill@dbc.com', password: 'password', admin: true)
   end
-
+  it {should belong_to(:breed)}
+  it {should have_one(:post)}
+  it {should have_one(:species)}
+  it {should belong_to(:user)}
   context "existing pet" do
     it "a pet has a name" do
       expect(Animal.first.name).to eq ("doge")

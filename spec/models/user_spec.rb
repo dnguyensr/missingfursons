@@ -5,6 +5,8 @@ RSpec.describe User, :type => :model do
     user = User.create(name: 'Bob', email: 'bob@dbc.com', password: 'password')
     admin = User.create(name: 'Bill', email: 'bill@dbc.com', password: 'password', admin: true)
   end
+  it {should have_many(:posts)}
+  it {should have_many(:animals)}
 
   context "existing users" do
     it "a user has a name" do
@@ -13,10 +15,6 @@ RSpec.describe User, :type => :model do
     it "a user has an email" do
       expect(User.first.email).to eq ("bob@dbc.com")
     end
-    # might have to use factory girl to test password
-    # it "a user has a password" do
-    #   expect(User.first.password).to_not eq (nil)
-    # end
     it "a user has an admin attribute" do
       expect(User.first.admin).to eq (nil)
     end
