@@ -1,11 +1,21 @@
-<h1>Found a pet?  Here are a few tips:</h1>
+<h1>Found a pet?</h1>
+
+<%= link_to 'Check out our listings of missing pets',  post_index%>
+
+<p>What to do: <%= link_to " (More Info)", "http://www.americanhumane.org/animals/adoption-pet-care/caring-for-your-pet/if-you-find-a-lost-pet.html"%></p>
+<ol>
+<li>Capture and contain it with care</li>
+<li>Call the authorities</li>
+<li>Check for ID</li>
+<li>Get the pet scanned for a microchip</li>
+<li>Take pets with no ID to an animal shelter</li>
+<li>Post fliers <%= link_to ' (Create flier here)', found_form_path%></li>
+</ol>
 
 
-<%= link_to 'What to do if you find a lost pet', "http://www.americanhumane.org/animals/adoption-pet-care/caring-for-your-pet/if-you-find-a-lost-pet.html", class: "btn-1" %>
-<%= link_to 'Create a pdf for the lost pet', found_form_path, class: "btn-1" %>
 
-
+<h2>Additional Resources</h2>
 
 <br><br>
-<%= link_to "Not sure if a cat's lost?  What to do if you meet a 'mystery' cat", "http://www.humanesociety.org/news/magazines/2016/07-08/mystery-cat-tips.html", class: "btn-1" %>
-<%= link_to "How to recognize and report animal cruelty", "http://www.humanesociety.org/issues/abuse_neglect/tips/cruelty_action.html?credit=web_id93480558_web_globalfooter", class: "btn-1" %>
+<%= link_to "Not sure if a cat's lost?  What to do if you meet a 'mystery' cat", "http://www.humanesociety.org/news/magazines/2016/07-08/mystery-cat-tips.html"%><br>
+<%= link_to "How to recognize and report animal cruelty", "http://www.humanesociety.org/issues/abuse_neglect/tips/cruelty_action.html?credit=web_id93480558_web_globalfooter"%>
