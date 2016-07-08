@@ -12,8 +12,6 @@ class PostsController < ApplicationController
   def index_json
     @posts = Post.within(5, :origin => "707 Broadway, San Diego")
     posts = @posts.includes(animal: :breed).as_json(include: { animal: { include: :breed, methods: :image_url_thumb } })
-    puts "======NUM RESULTS==========="
-    puts posts
     render json: posts
   end
 

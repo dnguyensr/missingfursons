@@ -216,13 +216,11 @@ h1 {
 
 /* pages */
 // login, signup
-.login-box, .signup-box {
+.login-box, .signup-box, .center-box {
   display: inline-block;
   p {
     font-size: initial;
   }
-}
-.center-box {
   width: 532px;
   text-align: center;
 }
@@ -273,6 +271,24 @@ form {
   color: transparentize($brown, 0.6);
 }
 
+.links {text-align: left;}
+.links a {
+  text-decoration: underline;
+}
+
+a.block {
+  display: block;
+  margin: 16px 0px;
+}
+
+#notice:empty {
+   display: none;
+}
+
+
+
+/* media queries */
+
 @media print {
   .print { display: initial; }
   nav, header { display: none; }
@@ -289,15 +305,3 @@ form {
   }
 }
 * { }
-
-#map_wrapper {
-    height: 400px;
-    width: 400px;
-    border: 5px solid black;
-}
-
-#map_canvas {
-    width: 100%;
-    height: 100%;
-}
-

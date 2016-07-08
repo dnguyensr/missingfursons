@@ -1,7 +1,13 @@
 <% if current_user.animals.any? %>
-<table class="responsive">
+
+<h1>Your Pets</h1>
+<%# render partial: 'posts/index', locals: { posts: @posts } %>
+
+
+<table>
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Breed</th>
       <th>Color</th>
@@ -9,13 +15,13 @@
       <th>Notes</th>
       <th>Edit</th>
       <th>Remove</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
+        <td><%= image_tag pet.image.url(:thumb) %></td>
         <td><%= pet.name %></td>
         <td><%= pet.breed.name %></td>
         <td><%= pet.color%></td>
@@ -27,6 +33,10 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+
 <% else %>
 <h3> No pets have been registered </h3>
 <%= link_to 'Add a Pet', add_path %>
