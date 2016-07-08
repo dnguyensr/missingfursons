@@ -5,12 +5,13 @@ class PostsController < ApplicationController
   geocode_ip_address
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.within(5, :origin => "707 Broadway, San Diego")
   end
 
   def index_json
-    posts = Post.includes(animal: :breed).as_json(include: { animal: { include: :breed, methods: :image_url_thumb } })
-    puts posts
+    @posts = Post.within(5, :origin => "707 Broadway, San Diego")
+    posts = @posts.includes(animal: :breed).as_json(include: { animal: { include: :breed, methods: :image_url_thumb } })
     render json: posts
   end
 

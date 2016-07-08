@@ -10,35 +10,15 @@ function initialize() {
 
     // Info Window Content
     var infoWindowContent = [];
-    // var infoWindowContent = [
-    //     ["Hello"],
-    //     ["Test"]
-    // ];
-
-    // var x = document.getElementById("ip");
-
-    //  // (navigator.geolocation) {
-    //    navigator.geolocation.getCurrentPosition(positionArray);
-    //    // console.log("GEO IS " + geo)
-    //  // };
-
-
-    // function positionArray(position) {
-    //     // x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-    //     var latit = position.coords.latitude;
-    //     var longit = position.coords.longitude;
-    //     console.log ("this will return " + [latit, longit])
-    //     var loc = [latit, longit];
-    //     $.post('<%= filter_based_on_location_path %>', loc);
-    //     // return [latit, longit];
-    // };
-
+    var markers =[];
 
     $.ajax({
         url: '/posts_json',
         dataType: "json"
     })
     .done(function(response){
+        console.log("LENGTH IS==========");
+        console.log(response.length);
         for (i=0; i<response.length; i++){
             var petname = response[i].animal.name;
             var petbreed = response[i].animal.breed.name;
@@ -49,24 +29,13 @@ function initialize() {
             // var contact_email
             var image_placement = "'<img src="+response[i].animal.image_url_thumb+">'";
             infoWindowContent.push([petname,petbreed,image_placement])
+            markers.push([response[i].lat, response[i].lng])
             };
-            // console.log(infoWindowContent);
-    });
+    //put all the following code in the ajax success so that the number os items that the controller sent back using location within 1 mile, works!
 
     // Display a map on the page
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
     map.setTilt(45);
-
-    // Multiple Markers
-    //var markers = [
-    //    ['London Eye, London', 51.503454,-0.119562],
-    //    ['Palace of Westminster, London', 51.499633,-0.124755]
-    //];
-    //var infoWindowContent = [
-    //     ["Hello"],
-    //     ["Test"]
-    // ];
-
 
     // Display multiple markers on a map
     var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -98,5 +67,5 @@ function initialize() {
         this.setZoom(12);
         google.maps.event.removeListener(boundsListener);
     });
+});
 };
-

@@ -271,11 +271,14 @@ form {
   color: transparentize($brown, 0.6);
 }
 
+.links {text-align: left;}
 .links a {
+  text-decoration: underline;
+}
+
+a.block {
   display: block;
   margin: 16px 0px;
-  text-align: left;
-  text-decoration: underline;
 }
 
 #notice:empty {
