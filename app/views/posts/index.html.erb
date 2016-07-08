@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <%= render partial: 'index', locals: { posts: @posts } %> -->
+<%# render partial: 'index', locals: { posts: @posts } %>
 
 <div id="map_wrapper">
   <div id="map_canvas" class="mapping"></div>
@@ -19,49 +19,10 @@
         <th>Email</th>
         <th colspan="3"></th>
       </tr>
-    </thead>
-
-   <!--  <script>
-        var x = document.getElementById("ip");
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        };
-
-
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-            var latit = position.coords.latitude;
-            var longit = position.coords.longitude;
-        };
-
-    </script> -->
-
-     <!-- <script>
-      var x = document.getElementById("ip");
-
-     navigator.geolocation.getCurrentPosition(positionArray);
-
-     function positionArray(position) {
-      var latit = position.coords.latitude;
-      var longit = position.coords.longitude;
-
-
-      console.log("loc in html is " + loc)
-    }
-
-    </script> -->
 
 
     <tbody>
-      <% markers = [] %>
       <% @posts.each do |post| %>
-      <% markers.push([post.lat.to_f, post.lng.to_f]) %>
         <tr>
           <td><%= image_tag post.animal.image.url(:thumb) %></td>
           <td><%= post.user.name %></td>
@@ -77,11 +38,6 @@
     </tbody>
   </table>
 
-
-
-    <script>
-        var markers = <%= markers %>
-    </script>
 
 <%= link_to 'I lost my animal', root_path, class: "btn-1"  %>
 
