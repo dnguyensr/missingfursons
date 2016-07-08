@@ -1,5 +1,17 @@
 
 
+<% markers = [] %>
 <% posts.each do |post| %>
+  <% markers.push([post.lat.to_f, post.lng.to_f]) %>
   <%= render partial: 'med', locals: { post: post } %>
 <% end %>
+
+<!-- <td><%# link_to 'Edit', edit_post_path(post) %></td>
+<td><%# link_to 'Remove listing', post, method: :delete, data: { confirm: 'Are you sure?' } %>  </td> -->
+
+<script>
+    var markers = <%= markers %>
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHO0RPuRPSeFMWo6htuwhUtb0Qpff2zl0&callback=initialize">
+</script>

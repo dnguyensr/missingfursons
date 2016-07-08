@@ -136,6 +136,34 @@ iframe {
   }
 }
 
+// posts index
+
+html, body, main, .wrapper { height: 100%;}
+
+.posts-index-left, .posts-index-right {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.post-index-left {
+}
+.post-index-right {
+  .med-post {
+    width: 100%;
+  }
+}
+
+#map_wrapper {
+    height: 100%;
+    width: 100%;
+    // border: 5px solid black;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
 
 
 
