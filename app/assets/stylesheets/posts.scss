@@ -51,7 +51,13 @@ div.image_cont {
   float:left;
 }
 
-div.image_cont img {
+div.image_cont .crop {
+  max-width: 360px;
+  height: 360px;
+  overflow: hidden;
+}
+
+div.image_cont .crop > img {
   width: auto;
   height: 360px;
 }
@@ -85,8 +91,55 @@ iframe {
 
   .lost {
     font-size: 80px;
-    margin: 0px;
+    // margin: 0px;
   }
 
 
 }
+
+
+
+
+
+/* PARTIALS :D */
+
+.med-post {
+  width: 320px;
+  height: 96px;
+  margin: 8px;
+  box-sizing: border-box;
+
+  font-family: 'Roboto';
+  text-align: left;
+
+  .left, .right { display: block;}
+  .left, .left img {
+    height: 96px;
+    width: 96px;
+  }
+
+  .left { float: left; }
+  .right {
+    width: auto;
+    padding: 12px;
+    padding-left: 108px;
+    .title {
+      display: block;
+      font: {
+        weight: bold;
+        size: 24px;
+      }
+    }
+    .info {
+      font-weight: normal;
+    }
+  }
+}
+
+
+
+
+
+
+
+* {}
