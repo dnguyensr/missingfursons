@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
 
     facebook_graph.put_wall_post("Lost #{@species_name} #{@animal_name} in #{@location} \#MissingFursons", {
       "name" => "Have you seen our #{@species_name} #{@animal_name}?",
-      "link" => "http://missingfursons.com/posts/#{self.id}", # Change this to show page link
+      "link" => "https://missingfursons.herokuapp.com/posts/#{self.id}", # Change this to show page link
       "picture" => self.animal.image.url # Change this to s3 link
     })
   end
@@ -36,7 +36,7 @@ class Post < ActiveRecord::Base
   def post_to_twitter
     get_post_information
 
-    post_link = "https://missingfursons.com/posts/#{self.id}"
+    post_link = "https://missingfursons.herokuapp.com/posts/#{self.id}"
 
     twitter_client.update_with_media("Lost #{@species_name} #{@animal_name} in #{@location}, @missing_fursons - #{post_link}", open(self.animal.image.url))
   end
