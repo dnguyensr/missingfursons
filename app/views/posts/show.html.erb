@@ -1,6 +1,10 @@
 <div class="post-show-box">
   <p id="notice" class="hide"><%= notice %></p>
 
+  <div class="hide">
+  Check out our <a href="https://www.facebook.com/missing.fursons/">facebook</a> and <a href="https://twitter.com/missing_fursons">twitter</a> posts for <%= @post.animal.name %>'s posts!
+  </div>
+
   <div class="lost">
     LOST <%= @post.animal.breed.species.name.upcase %>
   </div>
