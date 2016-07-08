@@ -1,0 +1,11 @@
+<div class="med-post">
+  <a href="posts/<%=post.id%>">
+  <div class="left">
+    <%= image_tag post.animal.image.url(:thumb) %>
+  </div>
+  <div class="right">
+    <span class="title"><%= post.animal.name %></span>
+    <span class="info">Last seen <%= distance_of_time_in_words(post.date, Time.now) %> ago around <%= post.location %></span>
+  </div>
+  </a>
+</div>

@@ -1,4 +1,4 @@
-<div class="login-box">  
+<div class="login-box">
   <h1>Log in</h1>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -15,5 +15,5 @@
 
   <%# render "users/shared/links" %>
 
-  <span>not a member? <a href="<%= new_user_registration_path %>">signup</a></span>
+  <p>not a member? <a href="<%= new_user_registration_path %>">signup</a></p>
 </div>

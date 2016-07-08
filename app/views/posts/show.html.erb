@@ -7,7 +7,9 @@
 
   <li>
     <div class="image_cont">
-      <%= image_tag @post.animal.image.url(:medium) %>
+      <div class="crop">
+        <%= image_tag @post.animal.image.url(:medium) %>
+      </div>
       <span><%= @post.animal.name %></span>
     </div>
     <div class="map_cont">
@@ -44,25 +46,6 @@
       <strong>Additional information:</strong>
       <%= @post.animal.additional_notes %>
     </p>
-
-  <p>If found please contact <b><%= @post.user.name %></b> at: </p>
-  <% if @post.phone != nil %>
-  <p>
-    <strong>Phone:</strong>
-    <%= @post.phone %>
-  </p>
-  <% end %>
-  <% if @post.email != nil %>
-  <p>
-    <strong>Email:</strong>
-    <%= @post.email %>
-  </p>
-  <% end %>
-  <p>
-    <strong>Additional information:</strong>
-    <%= @post.animal.additional_notes %>
-  </p>
-
 
   <p>
     <strong>Last seen in Zipcode:</strong>
