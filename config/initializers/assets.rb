@@ -19,4 +19,4 @@ Rails.application.config.assets.version = '1.0'
   Rails.application.config.assets.precompile += ["#{controller}.js.coffee", "#{controller}.css"]
 end
 
-Rails.application.config.assets.precompile += %w( new-new-banner.png )
+Rails.application.config.assets.precompile += %w( /images/new-new-banner.png )
