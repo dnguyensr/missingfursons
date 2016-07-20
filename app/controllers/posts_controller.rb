@@ -56,6 +56,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def create2
+    @post = Post.new(post_params)
+    @post.user = current_user
+    @post.animal = current_user.animals.last
+    @post.found_status = false
+    @post.lat = Post.geocode(@post.location).lat
+    @post.lng = Post.geocode(@post.location).lng
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to post_path @post, notice: 'Post was successfully created.' }
+        format.json { redirect_to post_path @post, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
