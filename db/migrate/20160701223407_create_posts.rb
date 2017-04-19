@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :user_id
       t.integer :animal_id
       t.boolean :found_status
+      t.date    :date
       t.string :location
       t.string :phone
       t.string :email
